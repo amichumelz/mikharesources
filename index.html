@@ -1,0 +1,3087 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<meta name="theme-color" content="#2BB8D4">
+<title>Mikha Resources — Langkawi Tour & Car Rental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Dancing+Script:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ============== RESET & TOKENS ============== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cyan: #2BB8D4;
+  --cyan-600: #1FA3BD;
+  --cyan-300: #7ED4E2;
+  --cyan-100: #D6EEF4;
+  --cyan-50:  #EAF6F9;
+  --cyan-25:  #F4FAFC;
+  --ink:      #0D3B4A;
+  --ink-2:    #103b47;
+  --text:     #4a5d67;
+  --text-dim: #7b8991;
+  --line:     #E3EEF2;
+  --line-soft:#F0F6F8;
+  --white:    #ffffff;
+  --amber:    #FFB940;
+  --shadow-1: 0 6px 18px rgba(13,59,74,0.08);
+  --shadow-2: 0 14px 40px rgba(13,59,74,0.12);
+  --shadow-3: 0 24px 60px rgba(13,59,74,0.18);
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 22px;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  line-height: 1.65;
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+input, select, textarea { font-family: inherit; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+/* ============== DOODLE PATTERN BG ============== */
+.doodle-bg { position: relative; }
+.doodle-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%237ED4E2' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' opacity='0.55'%3E%3Cpath d='M40 80 l40 -18 l-8 -14 l16 -4 l14 12 l28 -8 c6 -2 10 4 6 8 l-22 22 l8 26 l-10 4 l-18 -20 l-36 10 l-8 -10z'/%3E%3Cpath d='M180 140 q-14 -10 -30 -6 M180 140 q-6 -18 -22 -22 M180 140 q6 -18 22 -22 M180 140 q14 -10 30 -6 M180 140 v40'/%3E%3Cpath d='M340 60 a22 22 0 1 1 44 0 c0 14 -10 26 -22 32 c-12 -6 -22 -18 -22 -32z M352 92 l10 14 M372 92 l-10 14'/%3E%3Ccircle cx='450' cy='60' r='4'/%3E%3Cpath d='M450 64 v36 M438 96 a12 12 0 0 0 24 0 M444 76 h12'/%3E%3Cpath d='M60 280 h50 l6 -10 h18 l6 10 h50 v40 h-130z'/%3E%3Ccircle cx='125' cy='300' r='12'/%3E%3Cpath d='M290 290 h60 v48 h-60z M300 290 v-8 h40 v8'/%3E%3Cpath stroke-dasharray='2 6' d='M0 200 Q130 140 260 210 T520 180'/%3E%3Cpath stroke-dasharray='2 6' d='M0 420 Q140 360 280 410 T520 380'/%3E%3Ccircle cx='450' cy='310' r='18'/%3E%3Cpath d='M450 296 l4 14 l-4 14 l-4 -14z'/%3E%3Cpath d='M120 450 h40 a10 10 0 0 1 -40 0z M200 450 h40 a10 10 0 0 1 -40 0z M160 450 h40'/%3E%3Cpath d='M360 440 l20 -6 l-2 -6 l8 -2 l6 6 l16 -4 l-14 12 l4 10 l-6 2 l-10 -8 l-18 4z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 520px 520px;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+.doodle-bg > * { position: relative; z-index: 1; }
+
+/* ============== TYPOGRAPHY ============== */
+.script {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.h-section {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.sub {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+.title-block { text-align: center; margin-bottom: 36px; }
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+
+/* ============== BUTTONS ============== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+  min-height: 46px;
+  cursor: pointer;
+}
+.btn .arr {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.25);
+  font-size: 0.7rem;
+}
+.btn-cyan {
+  background: var(--cyan); color: var(--white);
+  box-shadow: 0 8px 22px rgba(43,184,212,0.35);
+}
+.btn-cyan:hover { background: var(--cyan-600); transform: translateY(-2px); }
+
+.btn-dark {
+  background: var(--ink); color: var(--white);
+  box-shadow: 0 8px 22px rgba(13,59,74,0.25);
+}
+.btn-dark:hover { background: var(--ink-2); transform: translateY(-2px); }
+.btn-dark .arr { background: var(--cyan); }
+
+.btn-ghost {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.12); }
+
+/* ============== NAVBAR with SWOOSH ============== */
+.nav {
+  background: var(--white);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s ease;
+}
+.nav-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 84px;
+}
+.logo {
+  position: relative;
+  z-index: 2;
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.logo-orb {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, var(--cyan), var(--cyan-300));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(43, 184, 212, 0.32);
+}
+.logo-orb::before {
+  content:''; position:absolute; inset: 4px;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  border-radius: 50%;
+  transform: rotate(-20deg) scaleY(0.4);
+}
+.logo-orb i {
+  color: var(--white); transform: rotate(-20deg);
+  font-size: 1.05rem;
+}
+.logo-text {
+  display: flex; flex-direction: column;
+  line-height: 1;
+}
+.logo-text .name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.5px;
+}
+.logo-text .tag {
+  font-size: 0.62rem;
+  color: var(--cyan-600);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.nav-menu {
+  display: flex; gap: 4px;
+  position: relative; z-index: 2;
+}
+.nav-menu a {
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color 0.3s;
+  display: flex; align-items: center; gap: 5px;
+  border-radius: 8px;
+}
+.nav-menu a:hover { color: var(--cyan); }
+.nav-menu .fa-caret-down { font-size: 0.7rem; opacity: 0.55; }
+
+.nav .btn { position: relative; z-index: 2; }
+
+.mobile-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--cyan);
+  color: white;
+  font-size: 1.1rem;
+  align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative; z-index: 2;
+}
+
+/* MOBILE DRAWER */
+.drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 86%; max-width: 360px;
+  height: 100vh;
+  background: var(--white);
+  z-index: 200;
+  padding: 24px 24px 40px;
+  overflow-y: auto;
+  transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: -10px 0 40px rgba(13,59,74,0.2);
+}
+.drawer.open { right: 0; }
+.drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(13,59,74,0.5);
+  z-index: 199;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(2px);
+}
+.drawer-overlay.show { opacity: 1; pointer-events: all; }
+.drawer-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 20px; border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+.drawer-head .logo { padding-left: 0; }
+.drawer-head .logo-orb { background: var(--cyan); border-color: var(--cyan); }
+.drawer-head .logo-text .name { color: var(--ink); }
+.drawer-head .logo-text .tag { color: var(--cyan-600); }
+.drawer-close {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--cyan-50);
+  color: var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.drawer-menu li a {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-soft);
+  transition: color 0.2s, padding 0.2s;
+}
+.drawer-menu li a:hover { color: var(--cyan); padding-left: 8px; }
+.drawer-contact { margin-top: 28px; }
+.drawer-contact h5 {
+  font-family: 'Playfair Display', serif;
+  color: var(--ink); font-weight: 600;
+  margin-bottom: 14px; font-size: 1rem;
+}
+.drawer-contact p {
+  font-size: 0.85rem; color: var(--text-dim);
+  margin-bottom: 10px;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.drawer-contact p i { color: var(--cyan); margin-top: 4px; }
+.drawer-cta { margin-top: 24px; }
+.drawer-cta .btn { width: 100%; justify-content: center; }
+
+/* ============== HERO ============== */
+.hero {
+  position: relative;
+  min-height: 660px;
+  color: var(--white);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=2000&q=85') center/cover no-repeat;
+  animation: slowZoom 25s ease-in-out infinite alternate;
+}
+@keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+.hero-bg::after {
+  content:''; position: absolute; inset: 0;
+  background: linear-gradient(95deg, rgba(10,40,55,0.55) 0%, rgba(10,40,55,0.25) 60%, rgba(10,40,55,0) 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  padding: 90px 0 140px;
+}
+.hero-script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  animation: rise 0.8s ease both;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5.8vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  max-width: 700px;
+  margin-bottom: 18px;
+  animation: rise 0.8s ease 0.1s both;
+}
+.hero-desc {
+  max-width: 540px;
+  font-size: 0.98rem;
+  margin-bottom: 32px;
+  opacity: 0.94;
+  animation: rise 0.8s ease 0.2s both;
+}
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; animation: rise 0.8s ease 0.3s both; }
+
+/* Scroll indicator */
+.scroll-ind {
+  position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.7);
+  z-index: 3;
+}
+.scroll-ind .dot-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.scroll-ind .dot-btn:hover { background: rgba(255,255,255,0.15); border-color: white; color: white; }
+.scroll-ind .line { width: 1.5px; height: 60px; background: rgba(255,255,255,0.5); position: relative; }
+.scroll-ind .line::before {
+  content:''; position: absolute; left: -2px; top: 30%;
+  width: 5px; height: 14px;
+  background: var(--cyan);
+  border-radius: 3px;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============== SEARCH BAR ============== */
+.search-block {
+  position: relative;
+  z-index: 10;
+  margin: -90px auto 0;
+  max-width: 1180px;
+  padding: 0 20px;
+}
+.search-tabs {
+  display: inline-flex;
+  background: var(--white);
+  padding: 6px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-1);
+  gap: 4px;
+}
+.tab-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.3s ease;
+  display: flex; align-items: center; gap: 8px;
+}
+.tab-btn.active {
+  background: var(--cyan);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(43,184,212,0.3);
+}
+.tab-btn i { font-size: 0.85rem; }
+
+.search {
+  background: var(--white);
+  border: 2px solid var(--cyan);
+  border-radius: 18px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 4px;
+  box-shadow: var(--shadow-2);
+}
+.sf {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px;
+  border-right: 1px solid var(--line);
+  min-width: 0;
+}
+.sf:last-of-type { border-right: none; }
+.sf > i { color: var(--cyan); font-size: 1.05rem; flex-shrink: 0; }
+.sf-body { flex: 1; position: relative; min-width: 0; }
+.sf label {
+  font-size: 0.7rem; color: var(--text-dim);
+  letter-spacing: 0.5px;
+  display: block; margin-bottom: 2px;
+  text-transform: uppercase;
+}
+.sf select, .sf input {
+  border: none; outline: none;
+  width: 100%;
+  font-size: 0.9rem; font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  appearance: none;
+  padding-right: 18px;
+  cursor: pointer;
+}
+.sf-body::after {
+  content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+  position: absolute; right: 0; top: 50%; transform: translateY(-10%);
+  font-size: 0.7rem; color: var(--text-dim); pointer-events: none;
+}
+.sb {
+  background: var(--cyan); color: white;
+  padding: 0 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  transition: all 0.3s;
+  font-size: 0.92rem;
+  min-height: 52px;
+}
+.sb:hover { background: var(--cyan-600); }
+
+/* ============== SECTIONS BASE ============== */
+section { padding: 70px 0; position: relative; }
+
+/* ============== TOUR CATEGORIES (curved wave marquee) ============== */
+.cat-viewport {
+  overflow: hidden;
+  padding: 60px 0 70px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+}
+.cat-track {
+  display: flex;
+  width: max-content;
+  animation: cat-scroll 32s linear infinite;
+  will-change: transform;
+}
+.cat-track:hover { animation-play-state: paused; }
+
+.cat-card {
+  flex-shrink: 0;
+  width: 240px;
+  margin-right: 24px;
+  text-align: center;
+  cursor: pointer;
+  --rot: 0deg;
+  animation: cat-wave 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+/* phase-shifted delays create rolling wave across the row */
+.cat-card:nth-child(5n+1) { --rot: -3deg; animation-delay: 0s; }
+.cat-card:nth-child(5n+2) { --rot: 1deg;  animation-delay: -0.9s; }
+.cat-card:nth-child(5n+3) { --rot: -1deg; animation-delay: -1.8s; }
+.cat-card:nth-child(5n+4) { --rot: 2deg;  animation-delay: -2.7s; }
+.cat-card:nth-child(5n+5) { --rot: -2deg; animation-delay: -3.6s; }
+
+.cat-card:hover { z-index: 5; }
+.cat-card:hover .cat-img { transform: scale(1.05); box-shadow: var(--shadow-2); }
+
+.cat-img {
+  height: 240px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  margin-bottom: 16px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.cat-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.cat-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.cat-card span { color: var(--text-dim); font-size: 0.8rem; }
+
+@keyframes cat-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes cat-wave {
+  0%, 100% { transform: translateY(10px) rotate(var(--rot)); }
+  50%      { transform: translateY(-34px) rotate(var(--rot)); }
+}
+
+.dots { display: flex; justify-content: center; gap: 8px; margin-top: 36px; }
+.dots span {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cyan-300);
+  cursor: pointer; transition: all 0.3s;
+}
+.dots span.active { background: var(--cyan); border-color: var(--cyan); width: 24px; border-radius: 5px; }
+
+/* ============== POPULAR DEST — auto-loop fan carousel ============== */
+.pop-sec { padding: 70px 0; }
+.stack {
+  position: relative;
+  height: 540px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.s-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 460px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  transform-origin: center;
+  transition:
+    transform 0.95s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.65s ease;
+  /* default = hidden right (cards are placed off-screen until JS assigns slot) */
+  transform: translate(-50%, -50%) translateX(560px) scale(0.55);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.s-card img { width: 100%; height: 100%; object-fit: cover; }
+.s-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 55%);
+}
+.s-card .label { position: absolute; left: 22px; bottom: 22px; color: white; z-index: 2; }
+.s-card .label h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; }
+.s-card .label p { font-size: 0.8rem; opacity: 0.9; margin-top: 2px; }
+.s-card .vbtn {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  padding: 9px 20px;
+  border: 1.5px solid rgba(255,255,255,0.75);
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 500;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.5s ease, background 0.3s, transform 0.3s;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+}
+.s-card .vbtn:hover { background: rgba(255,255,255,0.22); }
+
+/* slot positions — center is biggest and overlaps the inner side cards */
+.s-card[data-slot="0"] {
+  transform: translate(-50%, -50%) translateX(-380px) rotate(-9deg) scale(0.78);
+  opacity: 0.55;
+  z-index: 1;
+}
+.s-card[data-slot="1"] {
+  transform: translate(-50%, -50%) translateX(-200px) rotate(-4deg) scale(0.92);
+  opacity: 0.95;
+  z-index: 2;
+}
+.s-card[data-slot="2"] {
+  transform: translate(-50%, -50%) translateX(0) rotate(0deg) scale(1.06);
+  opacity: 1;
+  z-index: 5;
+}
+.s-card[data-slot="3"] {
+  transform: translate(-50%, -50%) translateX(200px) rotate(4deg) scale(0.92);
+  opacity: 0.95;
+  z-index: 2;
+}
+.s-card[data-slot="4"] {
+  transform: translate(-50%, -50%) translateX(380px) rotate(9deg) scale(0.78);
+  opacity: 0.55;
+  z-index: 1;
+}
+.s-card[data-slot="hl"] {
+  transform: translate(-50%, -50%) translateX(-560px) rotate(-12deg) scale(0.55);
+  opacity: 0;
+  z-index: 0;
+}
+.s-card[data-slot="hr"] {
+  transform: translate(-50%, -50%) translateX(560px) rotate(12deg) scale(0.55);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* View All button only on inner visible cards */
+.s-card[data-slot="1"] .vbtn,
+.s-card[data-slot="2"] .vbtn,
+.s-card[data-slot="3"] .vbtn { opacity: 1; pointer-events: auto; }
+.s-card[data-slot="1"] .vbtn,
+.s-card[data-slot="3"] .vbtn { opacity: 0.8; }
+
+/* ============== PLAN YOUR TRIP — organic ============== */
+.plan-sec { padding: 60px 0; }
+.plan-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 0.6fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+.plan-shapes {
+  position: relative;
+  height: 520px;
+}
+.plan-shapes .p-sh {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+}
+.plan-shapes .p-sh img { width: 100%; height: 100%; object-fit: cover; }
+.p-sh.a {
+  width: 230px; height: 360px;
+  top: 40px; left: 40px;
+  border-radius: 130px 130px 130px 130px / 180px 180px 180px 180px;
+}
+.p-sh.b {
+  width: 170px; height: 170px;
+  top: 30px; right: 40px;
+  border-radius: 50%;
+}
+.p-sh.c {
+  width: 210px; height: 260px;
+  bottom: 40px; right: 30px;
+  border-radius: 110px 110px 110px 110px / 140px 140px 140px 140px;
+}
+.plan-balloon {
+  position: absolute;
+  color: var(--cyan);
+  opacity: 0.55;
+  pointer-events: none;
+  font-size: 1.6rem;
+}
+.plan-balloon.one { top: 8%; left: -40px; animation: float 6s ease-in-out infinite; }
+.plan-balloon.two { top: 24%; left: -10px; animation: float 7s ease-in-out infinite 1s; font-size: 1.3rem; }
+
+.plan-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.plan-content .desc { color: var(--text-dim); margin-bottom: 28px; font-size: 0.93rem; }
+.feat {
+  display: flex; gap: 18px; margin-bottom: 22px;
+  align-items: flex-start;
+}
+.feat-ico {
+  flex-shrink: 0;
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 1.25rem;
+  box-shadow: 0 8px 18px rgba(43,184,212,0.3);
+}
+.feat h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 4px; font-weight: 600;
+}
+.feat p { color: var(--text-dim); font-size: 0.85rem; }
+
+.plan-guide {
+  position: relative;
+  height: 520px;
+  display: flex; align-items: center; justify-content: center;
+}
+.guide-bg-circle {
+  position: absolute;
+  width: 280px; height: 280px;
+  background: var(--cyan-100);
+  border-radius: 50%;
+  z-index: 1;
+}
+.plan-guide img {
+  position: relative;
+  z-index: 2;
+  max-width: 320px;
+  max-height: 480px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: drop-shadow(0 20px 30px rgba(13,59,74,0.15));
+}
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+/* ============== TOUR PACKAGES (Best Recommended) ============== */
+.rec-sec {
+  background: var(--cyan-25);
+  padding: 70px 0 80px;
+}
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.t-card {
+  background: white;
+  border-radius: 22px;
+  padding: 14px 14px 18px;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.t-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-2); }
+.t-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+.t-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.t-card:hover .t-img img { transform: scale(1.08); }
+.t-body { padding: 0 6px; }
+.t-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; color: var(--ink); font-weight: 600;
+  margin-bottom: 6px;
+}
+.t-loc {
+  font-size: 0.78rem; color: var(--text-dim);
+  display: flex; align-items: center; gap: 4px;
+  margin-bottom: 14px;
+}
+.t-loc i { color: var(--cyan); }
+.t-price {
+  color: var(--ink); font-weight: 700; font-size: 1.3rem;
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+.t-price small { color: var(--text-dim); font-weight: 400; font-size: 0.78rem; font-family: inherit; }
+.t-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px; border-top: 1px solid var(--line);
+}
+.t-meta .days {
+  font-size: 0.8rem; color: var(--text-dim);
+  display: flex; align-items: center; gap: 6px;
+}
+.t-meta .days i { color: var(--cyan); }
+.t-book {
+  font-size: 0.78rem; font-weight: 500; color: var(--ink);
+  padding: 9px 18px; border-radius: 999px;
+  border: 1px solid var(--line);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.3s;
+}
+.t-book:hover { background: var(--cyan); color: white; border-color: var(--cyan); }
+.t-book i {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: white;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.55rem;
+  transition: all 0.3s;
+}
+.t-book:hover i { background: white; color: var(--cyan); }
+
+/* ============== CAR RENTAL ============== */
+.car-sec { padding: 70px 0; }
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.car-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: all 0.4s;
+  border: 1px solid var(--line);
+}
+.car-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-2); border-color: var(--cyan-300); }
+.car-img {
+  height: 175px;
+  background: linear-gradient(135deg, var(--cyan-50), var(--cyan-100));
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.car-img img {
+  width: 92%;
+  max-height: 135px;
+  object-fit: contain;
+  transition: transform 0.5s;
+}
+.car-card:hover .car-img img { transform: scale(1.08) translateX(8px); }
+.car-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--cyan); color: white;
+  font-size: 0.68rem;
+  padding: 4px 11px; border-radius: 999px;
+  font-weight: 500;
+  z-index: 2;
+}
+.car-fav {
+  position: absolute; top: 12px; right: 12px;
+  width: 32px; height: 32px;
+  background: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  z-index: 2;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.car-fav:hover, .car-fav.active { background: var(--cyan); color: white; }
+.car-body { padding: 18px 20px 20px; }
+.car-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem; color: var(--ink); font-weight: 600;
+  margin-bottom: 4px;
+}
+.car-type { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 14px; }
+.car-specs {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  font-size: 0.74rem; color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+}
+.car-specs span { display: flex; align-items: center; gap: 5px; }
+.car-specs i { color: var(--cyan); }
+.car-foot {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.car-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.car-price small { font-size: 0.72rem; color: var(--text-dim); font-weight: 400; }
+.car-rent {
+  background: var(--cyan); color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.74rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all 0.3s;
+}
+.car-rent:hover { background: var(--cyan-600); }
+
+/* ============== RECENT GALLERY (asymmetric) ============== */
+.gal-sec { padding: 70px 0; }
+.gal {
+  display: grid;
+  grid-template-columns: 200px 240px 240px 240px 220px;
+  grid-template-rows: 170px 170px;
+  gap: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.gal-i {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.35s;
+}
+.gal-i:hover { transform: scale(1.03); }
+.gal-i img { width: 100%; height: 100%; object-fit: cover; }
+.gal-i.tall { grid-row: span 2; height: 354px; }
+.gal-i.one { align-self: center; }
+.gal-i.five { align-self: center; }
+
+/* ============== STATS ZIGZAG ============== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 1000px;
+  margin: 50px auto 0;
+  align-items: center;
+}
+.stat {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.35s;
+}
+.stat:hover { transform: scale(1.05); }
+.stat.out {
+  background: transparent;
+  border: 1.5px dashed var(--cyan-300);
+}
+.stat.fill { background: var(--cyan-100); }
+.stat h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1;
+}
+.stat p { font-size: 0.86rem; color: var(--text); margin-top: 6px; }
+.stat .dot-mark {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+.stat .dot-mark.top { top: 8px; right: 34px; }
+.stat .dot-mark.bot { bottom: 8px; left: 40px; }
+.stats > :nth-child(1) { transform: translateY(40px); }
+.stats > :nth-child(3) { transform: translateY(40px); }
+.stats > :nth-child(1):hover { transform: translateY(40px) scale(1.05); }
+.stats > :nth-child(3):hover { transform: translateY(40px) scale(1.05); }
+
+/* ============== TESTIMONIAL ============== */
+.tes-sec { padding: 70px 0 60px; }
+.tes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+  align-items: start;
+}
+.tes-card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 26px 22px 30px;
+  border-radius: 16px;
+  position: relative;
+  transition: transform 0.35s;
+  box-shadow: var(--shadow-1);
+}
+.tes-card:hover { transform: translateY(-6px); }
+.tes-card.hero-tes {
+  background: var(--cyan-100);
+  border-color: transparent;
+  transform: translateY(-30px);
+  padding: 28px 24px 36px;
+}
+.tes-card.hero-tes:hover { transform: translateY(-38px); }
+.tes-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.tes-user { display: flex; align-items: center; gap: 12px; }
+.tes-ava { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.tes-ava img { width: 100%; height: 100%; object-fit: cover; }
+.tes-user h5 { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--ink); font-weight: 600; }
+.tes-user span { font-size: 0.74rem; color: var(--text-dim); }
+.tes-stars { color: var(--amber); font-size: 0.72rem; }
+.tes-card p {
+  color: var(--text); font-size: 0.86rem; line-height: 1.75;
+  font-style: italic;
+}
+.tes-quote {
+  position: absolute; bottom: 8px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: var(--cyan-300); font-weight: 700;
+}
+.tes-card.hero-tes .tes-quote {
+  bottom: -14px; left: 50%; transform: translateX(-50%); right: auto;
+  width: 32px; height: 32px; background: var(--cyan); color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ============== NEWSLETTER ============== */
+.nl-sec { background: var(--cyan-100); padding: 60px 0; }
+.nl-wrap { display: grid; grid-template-columns: 1fr 1.7fr; gap: 36px; align-items: center; }
+.nl-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem; color: var(--ink); font-weight: 700;
+}
+.nl-wrap h3 small { color: var(--ink); display: block; font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 500; opacity: 0.8; }
+.nl-form {
+  background: white;
+  padding: 8px;
+  border-radius: 999px;
+  display: flex;
+  box-shadow: var(--shadow-1);
+}
+.nl-form input {
+  flex: 1; padding: 12px 22px;
+  border: none; outline: none;
+  font-size: 0.92rem;
+  background: transparent;
+  min-width: 0;
+}
+.nl-form button {
+  background: var(--cyan); color: white;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600; font-size: 0.86rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+.nl-form button:hover { background: var(--cyan-600); }
+
+/* ============== FOOTER ============== */
+.footer { background: white; padding: 70px 0 30px; }
+.f-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.4fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+.f-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; color: var(--ink);
+  margin-bottom: 20px; font-weight: 600;
+}
+.f-about .logo { padding-left: 0; }
+.f-about .logo .logo-orb { background: var(--cyan); border-color: var(--cyan); }
+.f-about .logo .logo-text .name { color: var(--ink); }
+.f-about .logo .logo-text .tag { color: var(--cyan-600); }
+.f-about p {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 18px 0 18px;
+}
+.f-social { display: flex; gap: 10px; }
+.f-social a {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--cyan-50);
+  color: var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem;
+  transition: all 0.3s;
+}
+.f-social a:hover { background: var(--cyan); color: white; }
+
+.f-col li { margin-bottom: 10px; }
+.f-col li a {
+  color: var(--text-dim); font-size: 0.88rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.3s;
+}
+.f-col li a:hover { color: var(--cyan); padding-left: 4px; }
+.f-col li a i { font-size: 0.6rem; color: var(--cyan); }
+
+.f-contact p {
+  color: var(--text-dim); font-size: 0.86rem;
+  margin-bottom: 12px;
+  display: flex; gap: 10px; align-items: flex-start;
+  line-height: 1.6;
+}
+.f-contact p i { color: var(--cyan); margin-top: 4px; flex-shrink: 0; width: 16px; }
+.f-cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 8px;
+  background: #25D366;
+  color: white !important;
+  padding: 11px 20px !important;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.f-cta-btn:hover { background: #1ea952; transform: translateY(-2px); }
+
+.f-bottom {
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 16px;
+  color: var(--text-dim); font-size: 0.85rem;
+}
+.f-bottom .reg-no {
+  color: var(--cyan-600); font-weight: 500; margin-left: 6px;
+}
+.pay { display: flex; gap: 10px; align-items: center; }
+.pay span { margin-right: 6px; font-weight: 500; }
+.pay i { font-size: 1.7rem; color: var(--text-dim); transition: color 0.3s; }
+.pay i:hover { color: var(--cyan); }
+
+/* ============== FLOATING WHATSAPP ============== */
+.fab {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 24px rgba(37,211,102,0.4);
+  z-index: 90;
+  transition: all 0.3s;
+  animation: pulse 2s ease-in-out infinite;
+}
+.fab:hover { transform: scale(1.1); animation: none; }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 10px 24px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 10px 24px rgba(37,211,102,0.7), 0 0 0 12px rgba(37,211,102,0.1); }
+}
+
+/* ============== BOOKING MODAL ============== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 59, 74, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+.modal {
+  background: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(28px) scale(0.95);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 80px rgba(13, 59, 74, 0.35);
+}
+.modal-overlay.show .modal { transform: translateY(0) scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 5;
+  font-size: 1rem;
+  color: var(--ink);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s;
+}
+.modal-close:hover { background: var(--cyan); color: white; transform: rotate(90deg); }
+
+.modal-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+  background: var(--cyan-50);
+}
+.modal-img img { width: 100%; height: 100%; object-fit: cover; }
+.modal-img.car img { object-fit: contain; padding: 20px; }
+.modal-img-fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 55%);
+  pointer-events: none;
+}
+.modal-img.car .modal-img-fade { display: none; }
+.modal-img-info {
+  position: absolute;
+  bottom: 16px; left: 22px; right: 60px;
+  color: white;
+  z-index: 2;
+}
+.modal-img.car .modal-img-info {
+  position: relative;
+  bottom: auto; left: auto; right: auto;
+  color: var(--ink);
+  padding: 16px 24px 0;
+  text-align: center;
+  margin-top: -34px;
+}
+.modal-img-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.modal-img-info p {
+  font-size: 0.84rem;
+  opacity: 0.92;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.modal-img.car .modal-img-info p { opacity: 1; color: var(--text-dim); }
+
+.modal-body { padding: 18px 22px 22px; }
+
+.modal-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cyan-600);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.modal-price small {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 400;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.modal-form h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.modal-specs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--cyan-25);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px dashed var(--line);
+}
+.modal-specs span { display: flex; align-items: center; gap: 6px; }
+.modal-specs i { color: var(--cyan); }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.field-row .field { margin-bottom: 0; }
+.field label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.field input, .field select, .field textarea {
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: white;
+  width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(43, 184, 212, 0.15);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 64px;
+  font-family: inherit;
+}
+.field-error {
+  border-color: #e84545 !important;
+  box-shadow: 0 0 0 3px rgba(232, 69, 69, 0.12) !important;
+}
+
+.btn-whatsapp {
+  width: 100%;
+  background: #25D366;
+  color: white;
+  padding: 15px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.btn-whatsapp:hover {
+  background: #1ea952;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+}
+.btn-whatsapp i { font-size: 1.25rem; }
+
+.modal-note {
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.modal-note i { color: var(--cyan); }
+
+/* Modal — extended details */
+.modal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.modal-stat {
+  background: var(--cyan-25);
+  padding: 10px 8px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--line-soft);
+}
+.modal-stat i {
+  color: var(--cyan);
+  font-size: 1rem;
+  margin-bottom: 4px;
+  display: block;
+}
+.modal-stat strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.modal-stat small {
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  display: block;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.modal-section { margin-bottom: 14px; }
+.modal-section h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal-section h4 i {
+  color: var(--cyan);
+  font-size: 0.92rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--cyan-50);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+}
+.modal-section p {
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* Itinerary timeline */
+.itinerary {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  margin-left: 4px;
+}
+.itinerary::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--cyan-100);
+}
+.itinerary li {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 16px;
+}
+.itinerary li:last-child { padding-bottom: 0; }
+.itinerary li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: 3px solid white;
+  box-shadow: 0 0 0 1.5px var(--cyan-300);
+}
+.itinerary .it-time {
+  font-size: 0.7rem;
+  color: var(--cyan-600);
+  font-weight: 700;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.itinerary .it-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.itinerary .it-desc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* List styles */
+.check-list, .x-list, .bring-list, .req-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+.check-list li, .x-list li, .bring-list li, .req-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.check-list li::before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #25D366;
+  font-size: 0.86rem;
+}
+.x-list li::before {
+  content: '\f057';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #e84545;
+  font-size: 0.86rem;
+}
+.bring-list li::before {
+  content: '\f0fe';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+}
+.req-list li::before {
+  content: '\f0a4';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--cyan);
+  font-size: 0.8rem;
+}
+
+/* Section divider */
+.modal-divider {
+  text-align: center;
+  margin: 18px 0 14px;
+  position: relative;
+}
+.modal-divider::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--line);
+}
+.modal-divider span {
+  background: white;
+  padding: 0 18px;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+.modal-divider span i {
+  color: var(--cyan);
+  margin-right: 6px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 540px) {
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal {
+    max-height: 95vh;
+    border-radius: 24px 24px 0 0;
+    transform: translateY(100%);
+  }
+  .modal-overlay.show .modal { transform: translateY(0); }
+  .modal-img { height: 170px; border-radius: 24px 24px 0 0; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .field-row .field { margin-bottom: 14px; }
+  .modal-body { padding: 20px 18px 24px; }
+  .modal-img-info h3 { font-size: 1.2rem; }
+  .modal-stats { grid-template-columns: 1fr; gap: 6px; }
+  .modal-stat { display: flex; align-items: center; gap: 12px; text-align: left; padding: 10px 14px; }
+  .modal-stat i { margin-bottom: 0; }
+  .modal-stat strong { font-size: 0.85rem; }
+  .modal-stat small { margin-top: 0; }
+  .check-list, .x-list, .bring-list, .req-list { grid-template-columns: 1fr; gap: 8px; }
+  .itinerary li { padding-left: 26px; }
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 1100px) {
+  .nav-menu { display: none; }
+  .mobile-toggle { display: flex; }
+  .nav .btn-dark { display: none; }
+
+  .cat-card { width: 220px; margin-right: 20px; }
+  .cat-img { height: 220px; }
+
+  .rec-grid, .car-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .gal {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 180px);
+  }
+  .gal-i.one, .gal-i.five { align-self: auto; }
+
+  .plan-grid { grid-template-columns: 1fr 1fr; }
+  .plan-guide { display: none; }
+
+  .nl-wrap { grid-template-columns: 1fr; }
+  .f-grid { grid-template-columns: 1fr 1fr; }
+
+  .stack { height: 480px; }
+  .s-card { width: 240px; height: 400px; }
+  .s-card[data-slot="0"] { transform: translate(-50%,-50%) translateX(-300px) rotate(-9deg) scale(0.72); }
+  .s-card[data-slot="1"] { transform: translate(-50%,-50%) translateX(-160px) rotate(-4deg) scale(0.9); }
+  .s-card[data-slot="2"] { transform: translate(-50%,-50%) translateX(0) rotate(0) scale(1.04); }
+  .s-card[data-slot="3"] { transform: translate(-50%,-50%) translateX(160px) rotate(4deg) scale(0.9); }
+  .s-card[data-slot="4"] { transform: translate(-50%,-50%) translateX(300px) rotate(9deg) scale(0.72); }
+  .s-card[data-slot="hl"] { transform: translate(-50%,-50%) translateX(-460px) rotate(-12deg) scale(0.5); }
+  .s-card[data-slot="hr"] { transform: translate(-50%,-50%) translateX(460px) rotate(12deg) scale(0.5); }
+
+  .scroll-ind { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .stats > :nth-child(n) { transform: none; }
+  .stats > :nth-child(n):hover { transform: scale(1.05); }
+
+  .tes-grid { grid-template-columns: 1fr; max-width: 520px; gap: 30px; }
+  .tes-card.hero-tes { transform: none; }
+  .tes-card.hero-tes:hover { transform: translateY(-6px); }
+}
+
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .wrap { padding: 0 16px; }
+
+  /* Nav */
+  .nav-wrap { min-height: 70px; padding: 0 16px; gap: 12px; }
+  .logo-orb { width: 40px; height: 40px; }
+  .logo-orb i { font-size: 0.9rem; }
+  .logo-text .name { font-size: 1.2rem; }
+  .logo-text .tag { font-size: 0.55rem; letter-spacing: 2px; }
+
+  /* Hero */
+  .hero { min-height: 580px; }
+  .hero-inner { padding: 80px 0 140px; }
+  .hero-script { font-size: 1.4rem; }
+  .hero-title { font-size: 2.1rem; line-height: 1.1; max-width: 100%; }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-buttons { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+
+  /* Search */
+  .search-block { margin-top: -85px; padding: 0 16px; }
+  .search {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    border-radius: 18px;
+    padding: 8px;
+  }
+  .sf {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .sf:nth-of-type(odd) { border-right: 1px solid var(--line); }
+  .sf:nth-of-type(3), .sf:nth-of-type(4) { border-bottom: none; }
+  .sb {
+    grid-column: span 2;
+    border-radius: 12px;
+    justify-content: center;
+    margin-top: 6px;
+    min-height: 50px;
+  }
+  .search-tabs { display: flex; width: 100%; }
+  .tab-btn { flex: 1; justify-content: center; padding: 10px 12px; font-size: 0.8rem; }
+
+  /* Title */
+  .title-block { margin-bottom: 36px; }
+  .h-section { font-size: 1.7rem; }
+  .script { font-size: 1.2rem; }
+
+  /* Categories marquee */
+  .cat-card { width: 180px; margin-right: 16px; }
+  .cat-img { height: 180px; }
+  .cat-card h4 { font-size: 1rem; }
+  .cat-card span { font-size: 0.74rem; }
+  .cat-track { animation-duration: 24s; }
+
+  /* Stack destinations - maintain fan layout, smaller scale */
+  .stack { height: 420px; }
+  .s-card { width: 190px; height: 320px; }
+  .s-card .label h4 { font-size: 1.05rem; }
+  .s-card .label p { font-size: 0.72rem; }
+  .s-card .vbtn { padding: 7px 14px; font-size: 0.7rem; right: 14px; bottom: 14px; }
+  .s-card .label { left: 16px; bottom: 16px; }
+  .s-card[data-slot="0"] { transform: translate(-50%,-50%) translateX(-200px) rotate(-9deg) scale(0.7); opacity: 0.5; }
+  .s-card[data-slot="1"] { transform: translate(-50%,-50%) translateX(-105px) rotate(-4deg) scale(0.86); }
+  .s-card[data-slot="2"] { transform: translate(-50%,-50%) translateX(0) rotate(0) scale(1.02); }
+  .s-card[data-slot="3"] { transform: translate(-50%,-50%) translateX(105px) rotate(4deg) scale(0.86); }
+  .s-card[data-slot="4"] { transform: translate(-50%,-50%) translateX(200px) rotate(9deg) scale(0.7); opacity: 0.5; }
+  .s-card[data-slot="hl"] { transform: translate(-50%,-50%) translateX(-320px) rotate(-12deg) scale(0.5); }
+  .s-card[data-slot="hr"] { transform: translate(-50%,-50%) translateX(320px) rotate(12deg) scale(0.5); }
+  .pop-sec { padding: 70px 0; }
+
+  /* Plan section */
+  .plan-grid { grid-template-columns: 1fr; }
+  .plan-shapes { height: 420px; max-width: 480px; margin: 0 auto; }
+  .p-sh.a { width: 200px; height: 300px; left: 0; top: 30px; }
+  .p-sh.b { width: 130px; height: 130px; right: 30px; top: 20px; }
+  .p-sh.c { width: 170px; height: 220px; right: 30px; bottom: 20px; }
+
+  /* Tour cards */
+  .rec-grid { grid-template-columns: 1fr; gap: 18px; }
+
+  /* Cars - 2 cols on mobile */
+  .car-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .car-img { height: 130px; }
+  .car-img img { max-height: 100px; }
+  .car-body { padding: 14px 14px 16px; }
+  .car-body h4 { font-size: 0.95rem; }
+  .car-type { font-size: 0.7rem; margin-bottom: 10px; }
+  .car-specs { font-size: 0.66rem; gap: 8px; margin-bottom: 10px; padding-bottom: 10px; }
+  .car-price { font-size: 1rem; }
+  .car-rent { padding: 6px 10px; font-size: 0.66rem; }
+
+  /* Gallery */
+  .gal {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 160px);
+  }
+  .gal-i.tall { height: auto; grid-row: span 1; }
+
+  /* Stats */
+  .stats { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .stat { width: 160px; height: 160px; }
+  .stat h3 { font-size: 1.9rem; }
+  .stat p { font-size: 0.78rem; }
+
+  /* Newsletter */
+  .nl-form { flex-direction: column; padding: 12px; border-radius: 18px; gap: 8px; }
+  .nl-form input { padding: 10px 14px; }
+  .nl-form button { width: 100%; justify-content: center; padding: 14px; }
+
+  /* Footer */
+  .f-grid { grid-template-columns: 1fr; gap: 32px; }
+  .f-bottom { justify-content: center; text-align: center; flex-direction: column; }
+
+  /* FAB */
+  .fab { width: 50px; height: 50px; font-size: 1.3rem; bottom: 18px; right: 18px; }
+}
+
+@media (max-width: 480px) {
+  .cat-card { width: 160px; margin-right: 14px; }
+  .cat-img { height: 160px; }
+  .car-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .gal { grid-template-columns: 1fr; grid-template-rows: repeat(5, 180px); }
+  .stack { height: 380px; }
+  .s-card { width: 165px; height: 280px; }
+  .s-card[data-slot="0"] { transform: translate(-50%,-50%) translateX(-160px) rotate(-10deg) scale(0.62); opacity: 0.4; }
+  .s-card[data-slot="1"] { transform: translate(-50%,-50%) translateX(-85px) rotate(-5deg) scale(0.82); }
+  .s-card[data-slot="2"] { transform: translate(-50%,-50%) translateX(0) rotate(0) scale(1); }
+  .s-card[data-slot="3"] { transform: translate(-50%,-50%) translateX(85px) rotate(5deg) scale(0.82); }
+  .s-card[data-slot="4"] { transform: translate(-50%,-50%) translateX(160px) rotate(10deg) scale(0.62); opacity: 0.4; }
+  .s-card[data-slot="hl"] { transform: translate(-50%,-50%) translateX(-260px) rotate(-12deg) scale(0.5); }
+  .s-card[data-slot="hr"] { transform: translate(-50%,-50%) translateX(260px) rotate(12deg) scale(0.5); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-wrap">
+    <a href="#" class="logo">
+      <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
+      <span class="logo-text">
+        <span class="name">MIKHA</span>
+        <span class="tag">RESOURCES</span>
+      </span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#">Home <i class="fa-solid fa-caret-down"></i></a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#cats">Services <i class="fa-solid fa-caret-down"></i></a></li>
+      <li><a href="#tours">Tours</a></li>
+      <li><a href="#cars">Car Rental <i class="fa-solid fa-caret-down"></i></a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <a href="#book" class="btn btn-dark">Request A Quote <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+    <button class="mobile-toggle" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="#" class="logo">
+      <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
+      <span class="logo-text">
+        <span class="name">MIKHA</span>
+        <span class="tag">RESOURCES</span>
+      </span>
+    </a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="drawer-menu">
+    <li><a href="#">Home <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+    <li><a href="#about">About Us <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+    <li><a href="#cats">Services <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+    <li><a href="#tours">Tour Packages <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+    <li><a href="#cars">Car Rental <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+    <li><a href="#contact">Contact Us <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:var(--text-dim);"></i></a></li>
+  </ul>
+  <div class="drawer-contact">
+    <h5>Get in Touch</h5>
+    <p><i class="fa-solid fa-phone"></i><a href="tel:+60175598007">+60 17-559 8007</a></p>
+    <p><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/60175598007">WhatsApp Us</a></p>
+    <p><i class="fa-solid fa-location-dot"></i>Lot 1.04 Arked Island, Padang Matsirat, Langkawi</p>
+  </div>
+  <div class="drawer-cta">
+    <a href="#book" class="btn btn-cyan">Request A Quote <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+  </div>
+</aside>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-script">Get unforgetable pleasure with us</div>
+    <h1 class="hero-title">Explore beauty of<br>Langkawi Island</h1>
+    <p class="hero-desc">Tour pakej eksklusif &amp; sewa kereta untuk percutian yang sempurna di Pulau Langkawi — semua dalam satu tempat.</p>
+    <div class="hero-buttons">
+      <a href="#tours" class="btn btn-cyan">Explore Tours <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#cars" class="btn btn-ghost">Car Rental <span class="arr"><i class="fa-solid fa-car" style="font-size:0.65rem;"></i></span></a>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <button class="dot-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll up"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="line"></div>
+    <button class="dot-btn" onclick="window.scrollBy({top:600, behavior:'smooth'})" aria-label="Scroll down"><i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-block">
+  <div class="search-tabs">
+    <button class="tab-btn active" data-tab="tour"><i class="fa-solid fa-umbrella-beach"></i> Tour Booking</button>
+    <button class="tab-btn" data-tab="car"><i class="fa-solid fa-car"></i> Car Rental</button>
+  </div>
+  <div class="search">
+    <div class="sf">
+      <i class="fa-solid fa-location-dot"></i>
+      <div class="sf-body">
+        <label>Destination</label>
+        <select>
+          <option>Pantai Cenang</option>
+          <option>Kuah Town</option>
+          <option>Padang Matsirat</option>
+          <option>Langkawi Airport</option>
+        </select>
+      </div>
+    </div>
+    <div class="sf">
+      <i class="fa-solid fa-bicycle"></i>
+      <div class="sf-body">
+        <label>Activity</label>
+        <select>
+          <option>Island Hopping</option>
+          <option>Cable Car &amp; Sky Bridge</option>
+          <option>Mangrove Tour</option>
+          <option>Sunset Cruise</option>
+          <option>Car Rental</option>
+        </select>
+      </div>
+    </div>
+    <div class="sf">
+      <i class="fa-regular fa-clock"></i>
+      <div class="sf-body">
+        <label>Duration</label>
+        <select>
+          <option>Half Day</option>
+          <option>Full Day</option>
+          <option>2 Days - 3 Days</option>
+          <option>4+ Days</option>
+        </select>
+      </div>
+    </div>
+    <div class="sf">
+      <i class="fa-solid fa-user-group"></i>
+      <div class="sf-body">
+        <label>Pax</label>
+        <select>
+          <option>2 Pax</option>
+          <option>4 Pax</option>
+          <option>6 Pax</option>
+          <option>8+ Pax</option>
+        </select>
+      </div>
+    </div>
+    <button class="sb"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+  </div>
+</div>
+
+<!-- TOUR CATEGORIES -->
+<section class="doodle-bg" id="cats">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Wonderful Place For You</span>
+      <h2 class="h-section">Tour Categories</h2>
+    </div>
+    <div class="cat-viewport">
+      <div class="cat-track">
+        <!-- Original 5 cards -->
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=500&q=85" alt="Island Hopping"></div>
+          <h4>Island Hopping</h4><span>See More</span>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=500&q=85" alt="Cable Car"></div>
+          <h4>Cable Car</h4><span>See More</span>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=500&q=85" alt="Mangrove"></div>
+          <h4>Mangrove</h4><span>See More</span>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85" alt="Sunset Cruise"></div>
+          <h4>Sunset Cruise</h4><span>See More</span>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&q=85" alt="Car Rental"></div>
+          <h4>Car Rental</h4><span>See More</span>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="cat-card" aria-hidden="true">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=500&q=85" alt=""></div>
+          <h4>Island Hopping</h4><span>See More</span>
+        </div>
+        <div class="cat-card" aria-hidden="true">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=500&q=85" alt=""></div>
+          <h4>Cable Car</h4><span>See More</span>
+        </div>
+        <div class="cat-card" aria-hidden="true">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=500&q=85" alt=""></div>
+          <h4>Mangrove</h4><span>See More</span>
+        </div>
+        <div class="cat-card" aria-hidden="true">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85" alt=""></div>
+          <h4>Sunset Cruise</h4><span>See More</span>
+        </div>
+        <div class="cat-card" aria-hidden="true">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&q=85" alt=""></div>
+          <h4>Car Rental</h4><span>See More</span>
+        </div>
+      </div>
+    </div>
+    <div class="dots"><span></span><span class="active"></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<!-- PLAN YOUR TRIP -->
+<section class="plan-sec" id="about">
+  <div class="wrap">
+    <div class="plan-grid">
+      <div class="plan-shapes reveal">
+        <i class="fa-solid fa-anchor plan-balloon one"></i>
+        <i class="fa-solid fa-feather plan-balloon two"></i>
+        <div class="p-sh a"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85" alt=""></div>
+        <div class="p-sh b"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=85" alt=""></div>
+        <div class="p-sh c"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=85" alt=""></div>
+      </div>
+      <div class="plan-content reveal delay-1">
+        <span class="script">Let's Go Together</span>
+        <h3>Plan Your Trip<br>With us</h3>
+        <p class="desc">Sebagai company tempatan Langkawi, Mikha Resources sediakan pakej tour eksklusif &amp; kereta sewa berkualiti dengan harga terbaik. Booking direct dengan kami — no middleman, no hidden charges.</p>
+        <div class="feat">
+          <div class="feat-ico"><i class="fa-solid fa-suitcase-rolling"></i></div>
+          <div>
+            <h5>Exclusive Trip</h5>
+            <p>Pakej tour custom termasuk speedboat, lunch &amp; tour guide bertauliah.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><i class="fa-solid fa-thumbs-up"></i></div>
+          <div>
+            <h5>Professional Guide</h5>
+            <p>Tour guide tempatan yang berpengalaman dan ramah, English &amp; BM.</p>
+          </div>
+        </div>
+        <a href="#book" class="btn btn-dark" style="margin-top:10px;">Learn More <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+      </div>
+      <div class="plan-guide">
+        <div class="guide-bg-circle"></div>
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85" alt="Tour Guide">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR DESTINATION -->
+<section class="pop-sec doodle-bg">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Top Destination</span>
+      <h2 class="h-section">Popular Destination</h2>
+    </div>
+    <div class="stack" id="destStack">
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=85" alt="">
+        <div class="label"><h4>Pantai Cenang</h4><p>15 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&q=85" alt="">
+        <div class="label"><h4>Eagle Square</h4><p>5 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=700&q=85" alt="">
+        <div class="label"><h4>Kilim Geoforest</h4><p>12 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=900&q=90" alt="">
+        <div class="label"><h4>Cable Car</h4><p>22 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=700&q=85" alt="">
+        <div class="label"><h4>Pulau Payar</h4><p>18 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=85" alt="">
+        <div class="label"><h4>Pulau Beras Basah</h4><p>9 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="s-card">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=85" alt="">
+        <div class="label"><h4>Underwater World</h4><p>14 Listing</p></div>
+        <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST RECOMMENDED -->
+<section class="rec-sec doodle-bg" id="tours">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Best Recommended Places</span>
+      <h2 class="h-section">Popular Tour Packages we offer</h2>
+      <p class="sub">Pakej tour terbaik di Langkawi dengan harga affordable. Termasuk lunch, life jacket dan licensed tour guide.</p>
+    </div>
+    <div class="rec-grid">
+      <div class="t-card reveal">
+        <div class="t-img">
+          <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&q=85" alt="">
+        </div>
+        <div class="t-body">
+          <h4>Island Hopping Speedboat</h4>
+          <div class="t-loc"><i class="fa-solid fa-location-dot"></i>3 Islands, Langkawi</div>
+          <div class="t-price">RM 80.00 <small>/Person</small></div>
+          <div class="t-meta">
+            <span class="days"><i class="fa-regular fa-clock"></i> 4 Hours</span>
+            <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="t-card reveal delay-1">
+        <div class="t-img">
+          <img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=600&q=85" alt="">
+        </div>
+        <div class="t-body">
+          <h4>Cable Car &amp; Sky Bridge</h4>
+          <div class="t-loc"><i class="fa-solid fa-location-dot"></i>Gunung Mat Cincang</div>
+          <div class="t-price">RM 150.00 <small>/Person</small></div>
+          <div class="t-meta">
+            <span class="days"><i class="fa-regular fa-clock"></i> 3 Hours</span>
+            <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="t-card reveal delay-2">
+        <div class="t-img">
+          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=600&q=85" alt="">
+        </div>
+        <div class="t-body">
+          <h4>Mangrove Kayak Adventure</h4>
+          <div class="t-loc"><i class="fa-solid fa-location-dot"></i>Kilim Geoforest Park</div>
+          <div class="t-price">RM 220.00 <small>/Person</small></div>
+          <div class="t-meta">
+            <span class="days"><i class="fa-regular fa-clock"></i> Half Day</span>
+            <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="t-card reveal delay-3">
+        <div class="t-img">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=85" alt="">
+        </div>
+        <div class="t-body">
+          <h4>Sunset Dinner Cruise</h4>
+          <div class="t-loc"><i class="fa-solid fa-location-dot"></i>Andaman Sea</div>
+          <div class="t-price">RM 280.00 <small>/Person</small></div>
+          <div class="t-meta">
+            <span class="days"><i class="fa-regular fa-clock"></i> 3 Hours</span>
+            <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dots"><span></span><span class="active"></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<!-- CAR RENTAL -->
+<section class="car-sec doodle-bg" id="cars">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Cruise Around Langkawi</span>
+      <h2 class="h-section">Our Car Rental Fleet</h2>
+      <p class="sub">Pilihan kereta dari budget sampai luxury — clean, fully insured, dan delivery percuma di airport &amp; hotel.</p>
+    </div>
+    <div class="car-grid">
+      <div class="car-card reveal">
+        <div class="car-img">
+          <span class="car-tag">Budget</span>
+          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=85" alt="Axia">
+        </div>
+        <div class="car-body">
+          <h4>Perodua Axia</h4>
+          <p class="car-type">Compact • Auto Transmission</p>
+          <div class="car-specs">
+            <span><i class="fa-solid fa-user"></i> 4 Seats</span>
+            <span><i class="fa-solid fa-suitcase"></i> 2 Bags</span>
+            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">RM 80 <small>/day</small></div>
+            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card reveal delay-1">
+        <div class="car-img">
+          <span class="car-tag">Popular</span>
+          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=85" alt="Myvi">
+        </div>
+        <div class="car-body">
+          <h4>Perodua Myvi</h4>
+          <p class="car-type">Hatchback • Auto Transmission</p>
+          <div class="car-specs">
+            <span><i class="fa-solid fa-user"></i> 5 Seats</span>
+            <span><i class="fa-solid fa-suitcase"></i> 3 Bags</span>
+            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">RM 100 <small>/day</small></div>
+            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card reveal delay-2">
+        <div class="car-img">
+          <span class="car-tag">Family</span>
+          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=85" alt="X50">
+        </div>
+        <div class="car-body">
+          <h4>Proton X50</h4>
+          <p class="car-type">SUV • Turbo</p>
+          <div class="car-specs">
+            <span><i class="fa-solid fa-user"></i> 5 Seats</span>
+            <span><i class="fa-solid fa-suitcase"></i> 4 Bags</span>
+            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">RM 180 <small>/day</small></div>
+            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card reveal delay-3">
+        <div class="car-img">
+          <span class="car-tag">Luxury</span>
+          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&q=85" alt="Vellfire">
+        </div>
+        <div class="car-body">
+          <h4>Toyota Vellfire</h4>
+          <p class="car-type">MPV • Premium</p>
+          <div class="car-specs">
+            <span><i class="fa-solid fa-user"></i> 7 Seats</span>
+            <span><i class="fa-solid fa-suitcase"></i> 6 Bags</span>
+            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">RM 450 <small>/day</small></div>
+            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:42px;" class="reveal">
+      <a href="#" class="btn btn-cyan">View All Vehicles <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT GALLERY -->
+<section class="gal-sec doodle-bg">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Make Your Tour More Pleasure</span>
+      <h2 class="h-section">Recent Gallery</h2>
+    </div>
+    <div class="gal">
+      <div class="gal-i one reveal"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=85" alt=""></div>
+      <div class="gal-i tall reveal delay-1"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500&q=85" alt=""></div>
+      <div class="gal-i tall reveal delay-2"><img src="https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?w=500&q=85" alt=""></div>
+      <div class="gal-i tall reveal delay-1"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=85" alt=""></div>
+      <div class="gal-i five reveal delay-2"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=400&q=85" alt=""></div>
+      <div class="gal-i reveal"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=85" alt=""></div>
+      <div class="gal-i reveal delay-3"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400&q=85" alt=""></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat out reveal">
+        <span class="dot-mark bot"></span>
+        <h3 data-count="8" data-suffix="">8</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat fill reveal delay-1">
+        <span class="dot-mark top"></span>
+        <h3 data-count="97" data-suffix="%">97%</h3>
+        <p>Retention Rate</p>
+      </div>
+      <div class="stat out reveal delay-2">
+        <span class="dot-mark bot"></span>
+        <h3 data-count="5" data-suffix="k">5k</h3>
+        <p>Tour Completed</p>
+      </div>
+      <div class="stat fill reveal delay-3">
+        <span class="dot-mark top"></span>
+        <h3 data-count="12" data-suffix="k">12k</h3>
+        <p>Happy Travellers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="tes-sec doodle-bg">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="script">Testimonial</span>
+      <h2 class="h-section">What Client Say About us</h2>
+    </div>
+    <div class="tes-grid">
+      <div class="tes-card reveal">
+        <div class="tes-head">
+          <div class="tes-user">
+            <div class="tes-ava"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=85" alt=""></div>
+            <div><h5>Aisyah Rahman</h5><span>From Kuala Lumpur</span></div>
+          </div>
+          <div class="tes-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p>"Service Mikha Resources memang topnotch! Booking island hopping dengan diorang dan tour guide friendly sangat. Akan repeat next time datang Langkawi."</p>
+        <div class="tes-quote">99</div>
+      </div>
+      <div class="tes-card hero-tes reveal delay-1">
+        <div class="tes-head">
+          <div class="tes-user">
+            <div class="tes-ava"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=85" alt=""></div>
+            <div><h5>Andrew Chen</h5><span>From Singapore</span></div>
+          </div>
+          <div class="tes-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p>"Rented a Proton X50 through Mikha for 4 days. Car was spotless, delivered to our hotel, and pickup at airport was seamless. Highly recommended!"</p>
+        <div class="tes-quote"><i class="fa-solid fa-quote-right" style="font-size:0.8rem;"></i></div>
+      </div>
+      <div class="tes-card reveal delay-2">
+        <div class="tes-head">
+          <div class="tes-user">
+            <div class="tes-ava"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=85" alt=""></div>
+            <div><h5>Maya Iskandar</h5><span>From Penang</span></div>
+          </div>
+          <div class="tes-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p>"Sunset cruise dengan Mikha super memorable! Makanan sedap, captain ramah dan view sunset cantik gilaa. Worth every ringgit. Thank you Mikha team!"</p>
+        <div class="tes-quote">99</div>
+      </div>
+    </div>
+    <div class="dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-sec" id="book">
+  <div class="wrap nl-wrap">
+    <h3>Get Updated The Latest<br><small>Newsletter &amp; Special Offers</small></h3>
+    <form class="nl-form" onsubmit="event.preventDefault(); const b=this.querySelector('button'); const o=b.innerHTML; b.textContent='Subscribed!'; setTimeout(()=>{b.innerHTML=o; this.reset();},2200);">
+      <input type="email" placeholder="Enter your Email" required>
+      <button type="submit">Subscribe Now <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i></button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col f-about">
+        <a href="#" class="logo">
+          <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
+          <span class="logo-text">
+            <span class="name">MIKHA</span>
+            <span class="tag">RESOURCES</span>
+          </span>
+        </a>
+        <p>Your trusted Langkawi travel partner. Tour bookings, car rental, airport transfer — semua dalam satu tempat dengan harga terbaik.</p>
+        <div class="f-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/60175598007" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#tours"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+          <li><a href="#cars"><i class="fa-solid fa-chevron-right"></i> Car Rental</a></li>
+          <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Terms &amp; Privacy</a></li>
+        </ul>
+      </div>
+      <div class="f-col f-contact">
+        <h4>Get In Touch</h4>
+        <p><i class="fa-solid fa-phone"></i><a href="tel:+60175598007">+60 17-559 8007</a></p>
+        <p><i class="fa-regular fa-envelope"></i><a href="mailto:info@mikharesources.com">info@mikharesources.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i>Lot 1.04 Arked Island, 1082, Island Plaza, Padang Matsirat, Langkawi, Kedah</p>
+        <a href="https://wa.me/60175598007" class="f-cta-btn"><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Copyright © 2026 Mikha Resources. All Rights Reserved. <span class="reg-no">(CT0134867-D)</span></p>
+      <div class="pay">
+        <span>We Accept:</span>
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="modal-img" id="modalImgWrap">
+      <img id="modalImg" src="" alt="">
+      <div class="modal-img-fade"></div>
+      <div class="modal-img-info">
+        <h3 id="modalTitle">—</h3>
+        <p id="modalLoc"></p>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-price">
+        <span id="modalPrice">RM 0</span>
+        <small id="modalPriceUnit"></small>
+      </div>
+
+      <!-- Quick stats grid -->
+      <div class="modal-stats" id="modalStats"></div>
+
+      <!-- About / Description -->
+      <section class="modal-section">
+        <h4><i class="fa-solid fa-circle-info"></i> About This Experience</h4>
+        <p id="modalDesc"></p>
+      </section>
+
+      <!-- Itinerary (tour only) -->
+      <section class="modal-section" data-show="tour">
+        <h4><i class="fa-solid fa-route"></i> Itinerary</h4>
+        <ul class="itinerary" id="itineraryList"></ul>
+      </section>
+
+      <!-- What's Included -->
+      <section class="modal-section">
+        <h4><i class="fa-solid fa-circle-check" style="background:#dcf5e0; color:#25D366;"></i> What's Included</h4>
+        <ul class="check-list" id="includedList"></ul>
+      </section>
+
+      <!-- Not Included -->
+      <section class="modal-section">
+        <h4><i class="fa-solid fa-circle-xmark" style="background:#fde0e0; color:#e84545;"></i> Not Included</h4>
+        <ul class="x-list" id="notIncludedList"></ul>
+      </section>
+
+      <!-- What to Bring (tour) -->
+      <section class="modal-section" data-show="tour">
+        <h4><i class="fa-solid fa-suitcase"></i> What to Bring</h4>
+        <ul class="bring-list" id="bringList"></ul>
+      </section>
+
+      <!-- Requirements (car) -->
+      <section class="modal-section" data-show="car">
+        <h4><i class="fa-solid fa-id-card"></i> Requirements</h4>
+        <ul class="req-list" id="reqList"></ul>
+      </section>
+
+      <!-- Booking Form Divider -->
+      <div class="modal-divider"><span><i class="fa-solid fa-calendar-check"></i>Booking Details</span></div>
+
+      <!-- TOUR FORM -->
+      <div class="modal-form" data-form="tour">
+        <div class="field-row">
+          <div class="field">
+            <label for="tourDate">Date</label>
+            <input type="date" id="tourDate">
+          </div>
+          <div class="field">
+            <label for="tourTime">Time</label>
+            <select id="tourTime">
+              <option value="">Select time</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="tourPax">Number of Pax</label>
+          <select id="tourPax">
+            <option value="">Select pax</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tourNote">Special Request <span style="text-transform:none; opacity:0.6;">(optional)</span></label>
+          <textarea id="tourNote" placeholder="Eg: child seat, vegetarian meal, hotel pickup..."></textarea>
+        </div>
+      </div>
+
+      <!-- CAR FORM -->
+      <div class="modal-form" data-form="car" style="display:none">
+        <div class="field-row">
+          <div class="field">
+            <label for="carPickupDate">Pickup Date</label>
+            <input type="date" id="carPickupDate">
+          </div>
+          <div class="field">
+            <label for="carPickupTime">Pickup Time</label>
+            <select id="carPickupTime">
+              <option value="">Select time</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="carReturnDate">Return Date</label>
+            <input type="date" id="carReturnDate">
+          </div>
+          <div class="field">
+            <label for="carReturnTime">Return Time</label>
+            <select id="carReturnTime">
+              <option value="">Select time</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="carLocation">Pickup Location</label>
+          <select id="carLocation">
+            <option>Langkawi Airport (LGK)</option>
+            <option>Pantai Cenang Hotel</option>
+            <option>Kuah Town Jetty</option>
+            <option>Padang Matsirat (Office)</option>
+            <option>Other (specify in note)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="carNote">Notes <span style="text-transform:none; opacity:0.6;">(optional)</span></label>
+          <textarea id="carNote" placeholder="Eg: hotel name, baby seat needed, additional driver..."></textarea>
+        </div>
+      </div>
+
+      <button type="button" class="btn-whatsapp" id="modalSubmit">
+        <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+      </button>
+      <p class="modal-note"><i class="fa-solid fa-shield-halved"></i> You'll be redirected to WhatsApp with details prefilled.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/60175598007" class="fab" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+/* ============== MOBILE DRAWER ============== */
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('drawer');
+const drawerClose = document.getElementById('drawerClose');
+const drawerOverlay = document.getElementById('drawerOverlay');
+
+const openDrawer = () => {
+  drawer.classList.add('open');
+  drawerOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+};
+const closeDrawer = () => {
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+};
+menuBtn.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+/* ============== TAB SWITCHER ============== */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+/* ============== REVEAL ON SCROLL ============== */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+/* ============== STAT COUNTER ============== */
+const counters = document.querySelectorAll('.stat h3');
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.getAttribute('data-count');
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1800;
+      const startTime = performance.now();
+      const tick = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(eased * target);
+        el.textContent = value + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(tick);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => countObserver.observe(c));
+
+/* ============== FAVORITE TOGGLE ============== */
+document.querySelectorAll('.car-fav').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    const icon = btn.querySelector('i');
+    if (btn.classList.contains('active')) {
+      icon.classList.remove('fa-regular');
+      icon.classList.add('fa-solid');
+    } else {
+      icon.classList.remove('fa-solid');
+      icon.classList.add('fa-regular');
+    }
+  });
+});
+
+/* ============== DOTS CLICK ============== */
+document.querySelectorAll('.dots').forEach(g => {
+  g.querySelectorAll('span').forEach(dot => {
+    dot.addEventListener('click', () => {
+      g.querySelectorAll('span').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
+});
+
+/* ============== NAV SHADOW ON SCROLL ============== */
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = window.scrollY > 20
+    ? '0 6px 22px rgba(13,59,74,0.1)'
+    : '0 2px 14px rgba(0,0,0,0.04)';
+});
+
+/* ============== TOUR CATEGORIES — click to scroll ============== */
+document.querySelectorAll('.cat-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const titleEl = card.querySelector('h4');
+    if (!titleEl) return;
+    const title = titleEl.textContent.trim();
+    const targetId = title === 'Car Rental' ? '#cars' : '#tours';
+    const targetEl = document.querySelector(targetId);
+    if (targetEl) {
+      const navHeight = document.querySelector('.nav').offsetHeight;
+      const top = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ============== POPULAR DESTINATIONS — auto-loop carousel ============== */
+(function () {
+  const stackEl = document.getElementById('destStack');
+  if (!stackEl) return;
+  const cards = [...stackEl.querySelectorAll('.s-card')];
+  const N = cards.length; // 7
+  // map of position → slot name. Order: hidden-left, slots 0..4, hidden-right
+  const slotMap = ['hl', '0', '1', '2', '3', '4', 'hr'];
+  let offset = 0;
+
+  function applySlots() {
+    cards.forEach((card, i) => {
+      const pos = ((i - offset) % N + N) % N;
+      card.dataset.slot = slotMap[pos];
+    });
+  }
+
+  // Initial state: card index 3 ("Cable Car") at center (slot "2")
+  // pos for i=3 needs to be 3 (which maps to slot "2")
+  // pos = (3 - offset) mod N = 3  →  offset = 0 ✓
+  applySlots();
+
+  let timer = null;
+  const start = () => {
+    stop();
+    timer = setInterval(() => {
+      offset = (offset + 1) % N;
+      applySlots();
+    }, 4200);
+  };
+  const stop = () => {
+    if (timer) { clearInterval(timer); timer = null; }
+  };
+
+  start();
+
+  // Pause on hover (desktop)
+  stackEl.addEventListener('mouseenter', stop);
+  stackEl.addEventListener('mouseleave', start);
+
+  // Pause when tab hidden (saves CPU)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop(); else start();
+  });
+
+  // Click any visible card → jump it to center
+  cards.forEach((card, i) => {
+    card.addEventListener('click', (e) => {
+      // ignore clicks on the View All link (let it work normally)
+      if (e.target.closest('.vbtn')) return;
+      // compute offset such that this card lands at slot "2" (pos=3)
+      offset = ((i - 3) % N + N) % N;
+      applySlots();
+      start(); // restart timer from this position
+    });
+  });
+})();
+
+
+/* ============== BOOKING MODAL ============== */
+(function () {
+  const modal = document.getElementById('bookModal');
+  if (!modal) return;
+
+  const modalClose  = document.getElementById('modalClose');
+  const modalImgWrap = document.getElementById('modalImgWrap');
+  const modalImg   = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalLoc   = document.getElementById('modalLoc');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalPriceUnit = document.getElementById('modalPriceUnit');
+  const tourForm = modal.querySelector('[data-form="tour"]');
+  const carForm  = modal.querySelector('[data-form="car"]');
+  const submitBtn = document.getElementById('modalSubmit');
+
+  let mode = 'tour';
+  const WA_NUMBER = '60175598007';
+
+  /* ============== DATA ============== */
+  const TOUR_DATA = {
+    'Island Hopping Speedboat': {
+      stats: [
+        { icon: 'fa-clock', label: 'Duration', value: '4 Hours' },
+        { icon: 'fa-location-dot', label: 'Meeting', value: 'Cenang Jetty' },
+        { icon: 'fa-users', label: 'Group', value: 'Min 2 pax' }
+      ],
+      description: 'Cruise the Andaman Sea by speedboat and explore three of Langkawi\'s most stunning islands. Swim at white-sand Pulau Beras Basah, witness the legendary Lake of the Pregnant Maiden, and watch wild eagles feeding in their natural habitat.',
+      itinerary: [
+        { time: '8:30 AM', title: 'Hotel Pickup (Optional)', desc: 'Free pickup within Pantai Cenang area. Other zones +RM 20.' },
+        { time: '9:00 AM', title: 'Briefing at Jetty', desc: 'Safety briefing & life jacket distribution.' },
+        { time: '9:30 AM', title: 'Pulau Beras Basah', desc: '45 min swimming & sunbathing on powder-white sand.' },
+        { time: '10:30 AM', title: 'Lake of the Pregnant Maiden', desc: 'Visit Pulau Dayang Bunting — freshwater lake legend.' },
+        { time: '12:00 PM', title: 'Eagle Feeding', desc: 'Pulau Singa Besar — watch wild eagles dive for fish.' },
+        { time: '1:00 PM', title: 'Return to Jetty', desc: 'Drop-off back at Pantai Cenang Jetty.' }
+      ],
+      included: ['Round-trip speedboat', 'Life jackets (all sizes)', 'Travel insurance', 'Licensed boat captain', 'Mineral water', 'Tour photos via WhatsApp'],
+      notIncluded: ['Lunch / meals', 'Hotel pickup outside Cenang', 'Personal expenses & tips', 'Lake entrance fee (RM 6)'],
+      bring: ['Swimwear & change of clothes', 'Towel', 'Sunscreen (reef-safe)', 'Hat & sunglasses', 'Waterproof phone bag', 'Cash for entrance fee']
+    },
+    'Cable Car & Sky Bridge': {
+      stats: [
+        { icon: 'fa-clock', label: 'Duration', value: '3 Hours' },
+        { icon: 'fa-location-dot', label: 'Meeting', value: 'Oriental Village' },
+        { icon: 'fa-mountain', label: 'Peak', value: '708m elevation' }
+      ],
+      description: 'Soar above the rainforest in one of the steepest cable cars in the world. Reach the peak of Gunung Mat Cincang for breathtaking 360° views, then walk across the curved Sky Bridge — Malaysia\'s most iconic suspension walkway.',
+      itinerary: [
+        { time: '9:30 AM', title: 'Arrive at Oriental Village', desc: 'Skip-the-line ticketing at base station.' },
+        { time: '10:00 AM', title: 'Cable Car Ascent', desc: '15-minute scenic ride to Middle & Top Stations.' },
+        { time: '10:30 AM', title: 'Sky Bridge & Sky Glass', desc: '45 min — curved suspension bridge & glass-floor viewpoint.' },
+        { time: '11:30 AM', title: 'Photo Stop at Peak', desc: '20 min for panoramic photos with Andaman backdrop.' },
+        { time: '12:00 PM', title: 'Descent & Free Time', desc: 'Optional 6D Cinemotion or shopping (own expense).' },
+        { time: '12:30 PM', title: 'End of Tour', desc: 'Free to explore Oriental Village or return to hotel.' }
+      ],
+      included: ['Cable car return ticket', 'Sky Bridge access', 'Skip-the-line entry', 'Tour guide (English / BM)', 'Bottled water', 'Photo opportunities'],
+      notIncluded: ['3D Art Museum (RM 25)', 'SkyRex / Cinemotion add-ons', 'Food & drinks', 'Hotel transfer (+RM 30)'],
+      bring: ['Comfortable walking shoes', 'Light jacket (cool at peak)', 'Camera or phone', 'Sunglasses', 'Drinking water', 'Valid ID']
+    },
+    'Mangrove Kayak Adventure': {
+      stats: [
+        { icon: 'fa-clock', label: 'Duration', value: 'Half Day' },
+        { icon: 'fa-location-dot', label: 'Meeting', value: 'Kilim Jetty' },
+        { icon: 'fa-users', label: 'Group', value: 'Min 2 pax' }
+      ],
+      description: 'Paddle through the UNESCO-listed Kilim Geoforest mangroves and explore hidden caves, limestone cliffs and bat habitats. Perfect for nature lovers seeking a quieter, more immersive Langkawi experience away from the crowds.',
+      itinerary: [
+        { time: '8:00 AM', title: 'Hotel Pickup', desc: 'Air-conditioned van transfer to Kilim Jetty (45 min).' },
+        { time: '9:00 AM', title: 'Kayak Briefing', desc: 'Safety briefing, paddling techniques & gear fitting.' },
+        { time: '9:30 AM', title: 'Mangrove Paddle', desc: '2-hour guided paddle through ancient mangrove tunnels.' },
+        { time: '11:30 AM', title: 'Bat Cave Exploration', desc: 'Walk through limestone cave (flashlights provided).' },
+        { time: '12:30 PM', title: 'Lunch at Floating Restaurant', desc: 'Local seafood lunch (own expense, ~RM 25).' },
+        { time: '2:00 PM', title: 'Return to Hotel', desc: 'Drop-off at your hotel by 2:30 PM.' }
+      ],
+      included: ['Hotel pickup & return', 'Single / tandem kayak', 'Paddle & life jacket', 'Licensed nature guide', 'Cave flashlight', 'Bottled water'],
+      notIncluded: ['Lunch (~RM 25/pax)', 'Geopark entrance (RM 5)', 'Waterproof bag rental (RM 10)', 'Tips for guide'],
+      bring: ['Quick-dry clothing', 'Closed-toe water shoes', 'Sunscreen & insect repellent', 'Cap or hat', 'Spare clothes', 'Cash for lunch']
+    },
+    'Sunset Dinner Cruise': {
+      stats: [
+        { icon: 'fa-clock', label: 'Duration', value: '3 Hours' },
+        { icon: 'fa-location-dot', label: 'Meeting', value: 'Telaga Harbour' },
+        { icon: 'fa-utensils', label: 'Includes', value: 'BBQ Buffet' }
+      ],
+      description: 'Set sail across the Andaman Sea on a private catamaran as the sun paints the sky orange and pink. Enjoy a generous BBQ buffet, free-flow soft drinks, live acoustic music, and dance under the stars. Romantic, photogenic, unforgettable.',
+      itinerary: [
+        { time: '5:30 PM', title: 'Boarding at Telaga Harbour', desc: 'Welcome cocktail & life jacket briefing.' },
+        { time: '6:00 PM', title: 'Set Sail', desc: 'Cruise toward open sea with island views.' },
+        { time: '6:30 PM', title: 'Sunset Photos', desc: 'Best photo opportunities as sun dips into Andaman.' },
+        { time: '7:00 PM', title: 'BBQ Dinner Buffet', desc: 'Grilled seafood, satay, salads, fruits & desserts.' },
+        { time: '8:00 PM', title: 'Live Music & Dancing', desc: 'Acoustic set, dance floor opens.' },
+        { time: '8:30 PM', title: 'Return to Harbour', desc: 'Disembark by 8:45 PM.' }
+      ],
+      included: ['Catamaran cruise (3 hours)', 'BBQ buffet dinner', 'Free-flow soft drinks', 'Welcome cocktail', 'Live acoustic entertainment', 'Life jackets'],
+      notIncluded: ['Alcoholic beverages (cash bar)', 'Hotel transfer (+RM 25)', 'Tips for crew', 'Photography service'],
+      bring: ['Light jacket (sea breeze)', 'Camera for sunset shots', 'Smart casual attire', 'Sunglasses', 'Cash for bar', 'Sense of adventure!']
+    }
+  };
+
+  const CAR_DATA = {
+    'Perodua Axia': {
+      stats: [
+        { icon: 'fa-user', label: 'Seats', value: '4 Persons' },
+        { icon: 'fa-suitcase', label: 'Luggage', value: '2 Bags' },
+        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Petrol' }
+      ],
+      description: 'Compact and fuel-efficient — ideal for solo travelers, couples, or budget-conscious explorers. Easy to park around Pantai Cenang and Kuah town. Best value for short trips around the island.',
+      included: ['Comprehensive insurance', 'Free hotel/airport delivery', 'Unlimited mileage', '24/7 roadside assistance', 'GPS phone holder', 'Full-tank to full-tank policy'],
+      notIncluded: ['Fuel (return same level)', 'Tolls & parking', 'Traffic fines', 'Cleaning fee if returned dirty'],
+      requirements: ['Min 21 years old', 'Valid driving license (1+ year)', 'Passport / IC for verification', 'Refundable deposit RM 200', 'Credit/debit card or cash']
+    },
+    'Perodua Myvi': {
+      stats: [
+        { icon: 'fa-user', label: 'Seats', value: '5 Persons' },
+        { icon: 'fa-suitcase', label: 'Luggage', value: '3 Bags' },
+        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Petrol' }
+      ],
+      description: 'Malaysia\'s most popular hatchback — perfect balance of space, comfort and fuel efficiency. Great for couples or small families. Smooth automatic transmission, ideal for first-time visitors.',
+      included: ['Comprehensive insurance', 'Free hotel/airport delivery', 'Unlimited mileage', '24/7 roadside assistance', 'Bluetooth audio', 'Full-tank policy'],
+      notIncluded: ['Fuel', 'Tolls & parking', 'Traffic fines', 'Late return fee (RM 25/hour)'],
+      requirements: ['Min 21 years old', 'Valid driving license (1+ year)', 'Passport / IC', 'Refundable deposit RM 250', 'Credit/debit card or cash']
+    },
+    'Proton X50': {
+      stats: [
+        { icon: 'fa-user', label: 'Seats', value: '5 Persons' },
+        { icon: 'fa-suitcase', label: 'Luggage', value: '4 Bags' },
+        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Turbo Petrol' }
+      ],
+      description: 'Modern compact SUV with turbo engine and premium features. Ideal for families exploring all corners of Langkawi — from Kuah town to Pantai Tengah. Higher ride comfort and tech features.',
+      included: ['Comprehensive insurance', 'Free delivery within Langkawi', 'Unlimited mileage', '24/7 roadside assistance', 'Apple CarPlay / Android Auto', 'Reverse camera & sensors', 'Full-tank policy'],
+      notIncluded: ['Fuel (RON 95+)', 'Tolls & parking', 'Traffic fines', 'Damage excess (RM 1,500)'],
+      requirements: ['Min 23 years old', 'Valid driving license (2+ years)', 'Passport / IC', 'Refundable deposit RM 500', 'Credit card preferred']
+    },
+    'Toyota Vellfire': {
+      stats: [
+        { icon: 'fa-user', label: 'Seats', value: '7 Persons' },
+        { icon: 'fa-suitcase', label: 'Luggage', value: '6 Bags' },
+        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Premium Petrol' }
+      ],
+      description: 'Luxury 7-seater MPV for groups, families or VIP transfers. Captain seats with leather, dual sunroof, premium audio. Ideal for airport pickups and large group outings around the island.',
+      included: ['Comprehensive insurance', 'Free delivery within Langkawi', 'Unlimited mileage', '24/7 roadside assistance', 'Premium leather interior', 'Dual-zone climate control', 'Driver service available (+RM 150/day)', 'Full-tank policy'],
+      notIncluded: ['Fuel (RON 97+)', 'Tolls & parking', 'Traffic fines', 'Damage excess (RM 3,000)'],
+      requirements: ['Min 25 years old', 'Valid driving license (3+ years)', 'Passport / IC', 'Refundable deposit RM 1,000', 'Credit card mandatory']
+    }
+  };
+
+  /* ============== TIME / PAX OPTIONS ============== */
+  const hours = [];
+  for (let h = 8; h <= 20; h++) {
+    const period = h >= 12 ? 'PM' : 'AM';
+    const display = (h === 12 ? 12 : h % 12) + ':00 ' + period;
+    hours.push(display);
+  }
+  const fillSelect = (id, items, placeholder) => {
+    const el = document.getElementById(id);
+    el.innerHTML = '<option value="">' + placeholder + '</option>' +
+      items.map(o => '<option>' + o + '</option>').join('');
+  };
+  fillSelect('tourTime', hours, 'Select time');
+  fillSelect('carPickupTime', hours, 'Select pickup time');
+  fillSelect('carReturnTime', hours, 'Select return time');
+
+  const paxArr = [];
+  for (let i = 1; i <= 12; i++) paxArr.push(i + (i === 1 ? ' Person' : ' Persons'));
+  fillSelect('tourPax', paxArr, 'Select pax');
+
+  const todayIso = new Date().toISOString().split('T')[0];
+  modal.querySelectorAll('input[type="date"]').forEach(el => el.setAttribute('min', todayIso));
+
+  /* ============== POPULATE MODAL ============== */
+  function populate(data, currentMode) {
+    if (!data) return;
+
+    // Stats
+    document.getElementById('modalStats').innerHTML = data.stats.map(s =>
+      '<div class="modal-stat"><i class="fa-solid ' + s.icon + '"></i>' +
+      '<strong>' + s.value + '</strong><small>' + s.label + '</small></div>'
+    ).join('');
+
+    // Description
+    document.getElementById('modalDesc').textContent = data.description;
+
+    // Itinerary (tour only)
+    if (currentMode === 'tour' && data.itinerary) {
+      document.getElementById('itineraryList').innerHTML = data.itinerary.map(it =>
+        '<li><div class="it-time">' + it.time + '</div>' +
+        '<div class="it-title">' + it.title + '</div>' +
+        '<div class="it-desc">' + it.desc + '</div></li>'
+      ).join('');
+    }
+
+    // Included / Not Included
+    document.getElementById('includedList').innerHTML =
+      data.included.map(i => '<li>' + i + '</li>').join('');
+    document.getElementById('notIncludedList').innerHTML =
+      data.notIncluded.map(i => '<li>' + i + '</li>').join('');
+
+    // Bring (tour) or Requirements (car)
+    if (currentMode === 'tour') {
+      document.getElementById('bringList').innerHTML =
+        data.bring.map(i => '<li>' + i + '</li>').join('');
+    } else {
+      document.getElementById('reqList').innerHTML =
+        data.requirements.map(i => '<li>' + i + '</li>').join('');
+    }
+
+    // Show/hide sections based on mode
+    modal.querySelectorAll('[data-show]').forEach(el => {
+      el.style.display = el.dataset.show === currentMode ? '' : 'none';
+    });
+  }
+
+  /* ============== MODAL OPEN/CLOSE ============== */
+  function openModal() {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    // Scroll modal to top when opening
+    setTimeout(() => { modal.querySelector('.modal').scrollTop = 0; }, 50);
+  }
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    modal.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+  }
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+  });
+
+  function splitPrice(text) {
+    const parts = text.split('/');
+    return {
+      amount: parts[0].trim(),
+      unit: parts[1] ? '/' + parts[1].trim() : ''
+    };
+  }
+
+  /* ============== TOUR BOOKING ============== */
+  document.querySelectorAll('.t-card .t-book').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const card = btn.closest('.t-card');
+      const title = card.querySelector('h4').textContent.trim();
+      const loc = card.querySelector('.t-loc').textContent.trim();
+      const priceText = card.querySelector('.t-price').textContent.trim();
+      const img = card.querySelector('.t-img img').src;
+      const days = card.querySelector('.days') ? card.querySelector('.days').textContent.trim() : '';
+
+      mode = 'tour';
+      modalImgWrap.classList.remove('car');
+      modalImg.src = img;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+      modalLoc.innerHTML = '<i class="fa-solid fa-location-dot"></i> ' + loc + (days ? ' • ' + days : '');
+
+      const p = splitPrice(priceText);
+      modalPrice.textContent = p.amount;
+      modalPriceUnit.textContent = p.unit;
+
+      tourForm.style.display = '';
+      carForm.style.display = 'none';
+
+      // Populate detailed sections
+      populate(TOUR_DATA[title], 'tour');
+
+      // Reset form
+      document.getElementById('tourDate').value = '';
+      document.getElementById('tourTime').value = '';
+      document.getElementById('tourPax').value = '';
+      document.getElementById('tourNote').value = '';
+
+      openModal();
+    });
+  });
+
+  /* ============== CAR RENTAL ============== */
+  document.querySelectorAll('.car-card .car-rent').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const card = btn.closest('.car-card');
+      const title = card.querySelector('h4').textContent.trim();
+      const type  = card.querySelector('.car-type').textContent.trim();
+      const priceText = card.querySelector('.car-price').textContent.trim();
+      const img = card.querySelector('.car-img img').src;
+
+      mode = 'car';
+      modalImgWrap.classList.add('car');
+      modalImg.src = img;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+      modalLoc.innerHTML = '<i class="fa-solid fa-car"></i> ' + type;
+
+      const p = splitPrice(priceText);
+      modalPrice.textContent = p.amount;
+      modalPriceUnit.textContent = p.unit;
+
+      tourForm.style.display = 'none';
+      carForm.style.display = '';
+
+      // Populate detailed sections
+      populate(CAR_DATA[title], 'car');
+
+      // Reset form
+      document.getElementById('carPickupDate').value = '';
+      document.getElementById('carPickupTime').value = '';
+      document.getElementById('carReturnDate').value = '';
+      document.getElementById('carReturnTime').value = '';
+      document.getElementById('carNote').value = '';
+
+      openModal();
+    });
+  });
+
+  /* ============== VALIDATION & SUBMIT ============== */
+  function markError(el, ok) {
+    if (ok) el.classList.remove('field-error');
+    else el.classList.add('field-error');
+    return ok;
+  }
+
+  submitBtn.addEventListener('click', () => {
+    let msg, ok = true;
+
+    if (mode === 'tour') {
+      const dateEl = document.getElementById('tourDate');
+      const timeEl = document.getElementById('tourTime');
+      const paxEl  = document.getElementById('tourPax');
+      const note   = document.getElementById('tourNote').value.trim();
+
+      ok &= markError(dateEl, !!dateEl.value);
+      ok &= markError(timeEl, !!timeEl.value);
+      ok &= markError(paxEl,  !!paxEl.value);
+      if (!ok) {
+        alert('Sila isi semua field yang diperlukan.');
+        // Scroll to form
+        modal.querySelector('.modal-divider').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      msg =
+        'Hi Mikha Resources! I would like to book a tour:\n\n' +
+        '🏝️ *Tour:* ' + modalTitle.textContent + '\n' +
+        '💰 *Price:* ' + modalPrice.textContent + ' ' + modalPriceUnit.textContent + '\n' +
+        '📅 *Date:* ' + dateEl.value + '\n' +
+        '🕐 *Time:* ' + timeEl.value + '\n' +
+        '👥 *Pax:* ' + paxEl.value;
+      if (note) msg += '\n📝 *Note:* ' + note;
+      msg += '\n\nPlease confirm availability. Thank you!';
+
+    } else {
+      const pdEl = document.getElementById('carPickupDate');
+      const ptEl = document.getElementById('carPickupTime');
+      const rdEl = document.getElementById('carReturnDate');
+      const rtEl = document.getElementById('carReturnTime');
+      const loc  = document.getElementById('carLocation').value;
+      const note = document.getElementById('carNote').value.trim();
+
+      ok &= markError(pdEl, !!pdEl.value);
+      ok &= markError(ptEl, !!ptEl.value);
+      ok &= markError(rdEl, !!rdEl.value);
+      ok &= markError(rtEl, !!rtEl.value);
+      if (!ok) {
+        alert('Sila isi semua field yang diperlukan.');
+        modal.querySelector('.modal-divider').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      if (rdEl.value < pdEl.value) {
+        rdEl.classList.add('field-error');
+        alert('Return date mesti selepas pickup date.');
+        return;
+      }
+
+      msg =
+        'Hi Mikha Resources! I would like to rent a car:\n\n' +
+        '🚗 *Vehicle:* ' + modalTitle.textContent + '\n' +
+        '💰 *Rate:* ' + modalPrice.textContent + ' ' + modalPriceUnit.textContent + '\n' +
+        '📅 *Pickup:* ' + pdEl.value + ' at ' + ptEl.value + '\n' +
+        '📅 *Return:* ' + rdEl.value + ' at ' + rtEl.value + '\n' +
+        '📍 *Location:* ' + loc;
+      if (note) msg += '\n📝 *Note:* ' + note;
+      msg += '\n\nPlease confirm availability. Thank you!';
+    }
+
+    const url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  });
+
+  modal.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('field-error'));
+    el.addEventListener('change', () => el.classList.remove('field-error'));
+  });
+})();
+
+
+</script>
+
+</body>
+</html>
