@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
@@ -317,7 +317,7 @@ input, select, textarea { font-family: inherit; }
 }
 .hero-inner {
   position: relative; z-index: 2;
-  padding: 90px 0 140px;
+  padding: 90px 0 140px 40px;
 }
 .hero-script {
   font-family: 'Dancing Script', cursive;
@@ -893,14 +893,263 @@ section { padding: 70px 0; position: relative; }
 }
 .car-rent:hover { background: var(--cyan-600); }
 
+/* Peak season tag inside the card */
+.car-card .peak-flag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.62rem;
+  background: #fde0e0;
+  color: #c93030;
+  padding: 2px 7px; border-radius: 999px;
+  font-weight: 600;
+  margin-left: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.car-price.is-peak { color: #c93030; }
+.car-price .price-low { color: var(--text-dim); font-size: 0.74rem; font-weight: 400; text-decoration: line-through; margin-left: 4px; }
+
+/* Season legend */
+.season-legend {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  justify-content: center;
+  margin: -10px auto 28px;
+  background: var(--cyan-25);
+  padding: 12px 22px;
+  border-radius: 999px;
+  max-width: max-content;
+  border: 1px dashed var(--cyan-300);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-item .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block;
+}
+.dot-low { background: var(--cyan); }
+.dot-peak { background: #e84545; box-shadow: 0 0 0 3px rgba(232,69,69,0.18); }
+
+/* Filter tabs */
+.car-filter {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.filter-btn {
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: white;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1.5px solid var(--line);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.filter-btn:hover { border-color: var(--cyan-300); color: var(--ink); }
+.filter-btn.active {
+  background: var(--cyan); color: white; border-color: var(--cyan);
+  box-shadow: 0 6px 16px rgba(43,184,212,0.3);
+}
+
+/* Inline date hint (below each date input) */
+.date-hint {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  line-height: 1.3;
+}
+.date-hint.show { display: inline-flex; }
+.date-hint.peak {
+  background: #fde0e0;
+  color: #c93030;
+  border: 1px solid #f5b4b4;
+}
+.date-hint.low {
+  background: var(--cyan-50);
+  color: var(--cyan-600);
+  border: 1px solid var(--cyan-300);
+}
+.date-hint i { font-size: 0.78rem; }
+
+/* Price Summary card */
+.price-summary {
+  background: linear-gradient(135deg, var(--cyan-25), #fff);
+  border: 1.5px solid var(--cyan-300);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(43,184,212,0.08);
+}
+.ps-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+.ps-header i { color: var(--cyan); }
+.ps-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.82rem;
+  color: var(--text);
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.ps-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.ps-row .ps-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ps-row .ps-tag {
+  font-size: 0.62rem;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.ps-row .ps-tag.peak { background: #fde0e0; color: #c93030; }
+.ps-row .ps-tag.low { background: var(--cyan-50); color: var(--cyan-600); }
+.ps-row .ps-amt {
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.ps-row .ps-amt.peak { color: #c93030; }
+
+/* Late return fee row — distinct styling */
+.ps-row.ps-fee {
+  background: #fff8f0;
+  border: 1px dashed #f5c98c;
+  border-radius: 8px;
+  padding: 7px 10px;
+  margin-top: 4px;
+  color: #8a5a1f;
+}
+.ps-row.ps-fee .ps-date {
+  font-size: 0.78rem;
+  font-style: italic;
+  flex: 1;
+  min-width: 0;
+}
+.ps-row.ps-fee .ps-date span {
+  white-space: normal;
+  line-height: 1.3;
+}
+.ps-row.ps-fee i {
+  color: #d68910;
+  flex-shrink: 0;
+}
+.ps-row.ps-fee .ps-amt {
+  color: #b9791d;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.ps-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 12px 0;
+}
+.ps-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Playfair Display', serif;
+}
+.ps-total span {
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+.ps-total span small {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+.ps-total strong {
+  font-size: 1.5rem;
+  color: var(--cyan-600);
+  font-weight: 700;
+}
+.ps-note {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-style: italic;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.ps-note::before {
+  content: '\f05a';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* Season pill in modal */
+.season-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+.season-pill.low {
+  background: var(--cyan-50);
+  color: var(--cyan-600);
+  border: 1px solid var(--cyan-300);
+}
+.season-pill.peak {
+  background: #fde0e0;
+  color: #c93030;
+  border: 1px solid #f5b4b4;
+}
+
+/* Date input visually flagged when on a holiday */
+.field input[type="date"].is-holiday {
+  color: #c93030;
+  font-weight: 700;
+  background: #fff5f5;
+  border-color: #e84545 !important;
+  box-shadow: 0 0 0 3px rgba(232,69,69,0.12) !important;
+}
+
 /* ============== RECENT GALLERY (asymmetric) ============== */
 .gal-sec { padding: 70px 0; }
 .gal {
   display: grid;
-  grid-template-columns: 200px 240px 240px 240px 220px;
-  grid-template-rows: 170px 170px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, 22vw);
   gap: 14px;
-  max-width: 1200px;
+  max-width: 1020px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -909,12 +1158,13 @@ section { padding: 70px 0; position: relative; }
   overflow: hidden;
   box-shadow: var(--shadow-1);
   transition: transform 0.35s;
+  min-height: 200px;
 }
 .gal-i:hover { transform: scale(1.03); }
-.gal-i img { width: 100%; height: 100%; object-fit: cover; }
-.gal-i.tall { grid-row: span 2; height: 354px; }
-.gal-i.one { align-self: center; }
-.gal-i.five { align-self: center; }
+.gal-i img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gal-i.tall { grid-row: span 1; height: 100%; }
+.gal-i.one,
+.gal-i.five { align-self: stretch; }
 
 /* ============== STATS ZIGZAG ============== */
 .stats {
@@ -1396,12 +1646,13 @@ section { padding: 70px 0; position: relative; }
   letter-spacing: 0.4px;
 }
 
-.modal-section { margin-bottom: 14px; }
+.modal-section { margin-bottom: 18px; padding: 0; position: static; }
+.modal-section:last-of-type { margin-bottom: 12px; }
 .modal-section h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1.02rem;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1422,7 +1673,8 @@ section { padding: 70px 0; position: relative; }
 .modal-section p {
   color: var(--text);
   font-size: 0.88rem;
-  line-height: 1.7;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* Itinerary timeline */
@@ -1598,10 +1850,10 @@ section { padding: 70px 0; position: relative; }
   .rec-grid, .car-grid { grid-template-columns: repeat(2, 1fr); }
 
   .gal {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 180px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(180px, 24vw);
   }
-  .gal-i.one, .gal-i.five { align-self: auto; }
+  .gal-i.one, .gal-i.five { align-self: stretch; }
 
   .plan-grid { grid-template-columns: 1fr 1fr; }
   .plan-guide { display: none; }
@@ -1642,7 +1894,7 @@ section { padding: 70px 0; position: relative; }
 
   /* Hero */
   .hero { min-height: 580px; }
-  .hero-inner { padding: 80px 0 140px; }
+  .hero-inner { padding: 80px 0 140px 24px; }
   .hero-script { font-size: 1.4rem; }
   .hero-title { font-size: 2.1rem; line-height: 1.1; max-width: 100%; }
   .hero-desc { font-size: 0.9rem; }
@@ -1727,7 +1979,7 @@ section { padding: 70px 0; position: relative; }
   /* Gallery */
   .gal {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 160px);
+    grid-auto-rows: minmax(160px, 42vw);
   }
   .gal-i.tall { height: auto; grid-row: span 1; }
 
@@ -1755,7 +2007,7 @@ section { padding: 70px 0; position: relative; }
   .cat-img { height: 160px; }
   .car-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
-  .gal { grid-template-columns: 1fr; grid-template-rows: repeat(5, 180px); }
+  .gal { grid-template-columns: 1fr; grid-auto-rows: minmax(200px, 55vw); }
   .stack { height: 380px; }
   .s-card { width: 165px; height: 280px; }
   .s-card[data-slot="0"] { transform: translate(-50%,-50%) translateX(-160px) rotate(-10deg) scale(0.62); opacity: 0.4; }
@@ -1831,7 +2083,7 @@ section { padding: 70px 0; position: relative; }
   <div class="wrap hero-inner">
     <div class="hero-script">Get unforgetable pleasure with us</div>
     <h1 class="hero-title">Explore beauty of<br>Langkawi Island</h1>
-    <p class="hero-desc">Tour pakej eksklusif &amp; sewa kereta untuk percutian yang sempurna di Pulau Langkawi — semua dalam satu tempat.</p>
+    <p class="hero-desc">Exclusive tour packages and quality car rentals for the perfect Langkawi Island getaway — all in one place.</p>
     <div class="hero-buttons">
       <a href="#tours" class="btn btn-cyan">Explore Tours <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
       <a href="#cars" class="btn btn-ghost">Car Rental <span class="arr"><i class="fa-solid fa-car" style="font-size:0.65rem;"></i></span></a>
@@ -1919,15 +2171,15 @@ section { padding: 70px 0; position: relative; }
           <h4>Island Hopping</h4><span>See More</span>
         </div>
         <div class="cat-card">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=500&q=85" alt="Cable Car"></div>
+          <div class="cat-img"><img src="assets/cable-car-skycab.png" alt="Cable Car"></div>
           <h4>Cable Car</h4><span>See More</span>
         </div>
         <div class="cat-card">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=500&q=85" alt="Mangrove"></div>
+          <div class="cat-img"><img src="assets/mangrove-kayak.png" alt="Mangrove"></div>
           <h4>Mangrove</h4><span>See More</span>
         </div>
         <div class="cat-card">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85" alt="Sunset Cruise"></div>
+          <div class="cat-img"><img src="assets/sunset-cruise-catamaran.png" alt="Sunset Cruise"></div>
           <h4>Sunset Cruise</h4><span>See More</span>
         </div>
         <div class="cat-card">
@@ -1940,15 +2192,15 @@ section { padding: 70px 0; position: relative; }
           <h4>Island Hopping</h4><span>See More</span>
         </div>
         <div class="cat-card" aria-hidden="true">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=500&q=85" alt=""></div>
+          <div class="cat-img"><img src="assets/cable-car-skycab.png" alt=""></div>
           <h4>Cable Car</h4><span>See More</span>
         </div>
         <div class="cat-card" aria-hidden="true">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=500&q=85" alt=""></div>
+          <div class="cat-img"><img src="assets/mangrove-kayak.png" alt=""></div>
           <h4>Mangrove</h4><span>See More</span>
         </div>
         <div class="cat-card" aria-hidden="true">
-          <div class="cat-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85" alt=""></div>
+          <div class="cat-img"><img src="assets/sunset-cruise-catamaran.png" alt=""></div>
           <h4>Sunset Cruise</h4><span>See More</span>
         </div>
         <div class="cat-card" aria-hidden="true">
@@ -1975,26 +2227,26 @@ section { padding: 70px 0; position: relative; }
       <div class="plan-content reveal delay-1">
         <span class="script">Let's Go Together</span>
         <h3>Plan Your Trip<br>With us</h3>
-        <p class="desc">Sebagai company tempatan Langkawi, Mikha Resources sediakan pakej tour eksklusif &amp; kereta sewa berkualiti dengan harga terbaik. Booking direct dengan kami — no middleman, no hidden charges.</p>
+        <p class="desc">As a Langkawi local company, Mikha Resources provides exclusive tour packages and quality car rentals at the best rates. Book direct with us — no middleman, no hidden charges.</p>
         <div class="feat">
           <div class="feat-ico"><i class="fa-solid fa-suitcase-rolling"></i></div>
           <div>
             <h5>Exclusive Trip</h5>
-            <p>Pakej tour custom termasuk speedboat, lunch &amp; tour guide bertauliah.</p>
+            <p>Custom tour packages including speedboat, lunch, and a licensed tour guide.</p>
           </div>
         </div>
         <div class="feat">
           <div class="feat-ico"><i class="fa-solid fa-thumbs-up"></i></div>
           <div>
             <h5>Professional Guide</h5>
-            <p>Tour guide tempatan yang berpengalaman dan ramah, English &amp; BM.</p>
+            <p>Experienced and friendly local tour guides, available in English and Malay.</p>
           </div>
         </div>
         <a href="#book" class="btn btn-dark" style="margin-top:10px;">Learn More <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
       <div class="plan-guide">
         <div class="guide-bg-circle"></div>
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85" alt="Tour Guide">
+        <img src="assets/tour-guide.png" alt="Tour Guide">
       </div>
     </div>
   </div>
@@ -2014,17 +2266,17 @@ section { padding: 70px 0; position: relative; }
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="s-card">
-        <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&q=85" alt="">
+        <img src="assets/eagle-square.png" alt="">
         <div class="label"><h4>Eagle Square</h4><p>5 Listing</p></div>
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="s-card">
-        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=700&q=85" alt="">
+        <img src="assets/mangrove-kayak.png" alt="">
         <div class="label"><h4>Kilim Geoforest</h4><p>12 Listing</p></div>
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="s-card">
-        <img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=900&q=90" alt="">
+        <img src="assets/cable-car-skycab.png" alt="">
         <div class="label"><h4>Cable Car</h4><p>22 Listing</p></div>
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
@@ -2034,7 +2286,7 @@ section { padding: 70px 0; position: relative; }
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="s-card">
-        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=85" alt="">
+        <img src="assets/pulau-beras-basah.png" alt="">
         <div class="label"><h4>Pulau Beras Basah</h4><p>9 Listing</p></div>
         <a href="#" class="vbtn">View All <i class="fa-solid fa-arrow-right"></i></a>
       </div>
@@ -2053,7 +2305,7 @@ section { padding: 70px 0; position: relative; }
     <div class="title-block reveal">
       <span class="script">Best Recommended Places</span>
       <h2 class="h-section">Popular Tour Packages we offer</h2>
-      <p class="sub">Pakej tour terbaik di Langkawi dengan harga affordable. Termasuk lunch, life jacket dan licensed tour guide.</p>
+      <p class="sub">Best-value Langkawi tour packages at affordable prices, including lunch, life jackets, and licensed tour guides.</p>
     </div>
     <div class="rec-grid">
       <div class="t-card reveal">
@@ -2072,7 +2324,7 @@ section { padding: 70px 0; position: relative; }
       </div>
       <div class="t-card reveal delay-1">
         <div class="t-img">
-          <img src="https://images.unsplash.com/photo-1601379760883-1bb497a558c5?w=600&q=85" alt="">
+          <img src="assets/cable-car-skycab.png" alt="">
         </div>
         <div class="t-body">
           <h4>Cable Car &amp; Sky Bridge</h4>
@@ -2086,7 +2338,7 @@ section { padding: 70px 0; position: relative; }
       </div>
       <div class="t-card reveal delay-2">
         <div class="t-img">
-          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?w=600&q=85" alt="">
+          <img src="assets/mangrove-kayak.png" alt="">
         </div>
         <div class="t-body">
           <h4>Mangrove Kayak Adventure</h4>
@@ -2100,7 +2352,7 @@ section { padding: 70px 0; position: relative; }
       </div>
       <div class="t-card reveal delay-3">
         <div class="t-img">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=85" alt="">
+          <img src="assets/sunset-cruise-catamaran.png" alt="Sunset dinner cruise — catamaran in the Andaman Sea">
         </div>
         <div class="t-body">
           <h4>Sunset Dinner Cruise</h4>
@@ -2123,96 +2375,36 @@ section { padding: 70px 0; position: relative; }
     <div class="title-block reveal">
       <span class="script">Cruise Around Langkawi</span>
       <h2 class="h-section">Our Car Rental Fleet</h2>
-      <p class="sub">Pilihan kereta dari budget sampai luxury — clean, fully insured, dan delivery percuma di airport &amp; hotel.</p>
+      <p class="sub">Car options from budget to luxury — clean, fully insured, with free delivery to the airport and hotels. Peak season rates apply automatically on public holidays and festive periods.</p>
     </div>
-    <div class="car-grid">
-      <div class="car-card reveal">
-        <div class="car-img">
-          <span class="car-tag">Budget</span>
-          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
-          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=85" alt="Axia">
-        </div>
-        <div class="car-body">
-          <h4>Perodua Axia</h4>
-          <p class="car-type">Compact • Auto Transmission</p>
-          <div class="car-specs">
-            <span><i class="fa-solid fa-user"></i> 4 Seats</span>
-            <span><i class="fa-solid fa-suitcase"></i> 2 Bags</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-          </div>
-          <div class="car-foot">
-            <div class="car-price">RM 80 <small>/day</small></div>
-            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
-          </div>
-        </div>
-      </div>
 
-      <div class="car-card reveal delay-1">
-        <div class="car-img">
-          <span class="car-tag">Popular</span>
-          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
-          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=85" alt="Myvi">
-        </div>
-        <div class="car-body">
-          <h4>Perodua Myvi</h4>
-          <p class="car-type">Hatchback • Auto Transmission</p>
-          <div class="car-specs">
-            <span><i class="fa-solid fa-user"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-suitcase"></i> 3 Bags</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-          </div>
-          <div class="car-foot">
-            <div class="car-price">RM 100 <small>/day</small></div>
-            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
-          </div>
-        </div>
+    <!-- Season Legend -->
+    <div class="season-legend reveal">
+      <div class="legend-item">
+        <span class="dot dot-low"></span>
+        <span><strong>Low Season</strong> — Regular days</span>
       </div>
-
-      <div class="car-card reveal delay-2">
-        <div class="car-img">
-          <span class="car-tag">Family</span>
-          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
-          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=85" alt="X50">
-        </div>
-        <div class="car-body">
-          <h4>Proton X50</h4>
-          <p class="car-type">SUV • Turbo</p>
-          <div class="car-specs">
-            <span><i class="fa-solid fa-user"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-suitcase"></i> 4 Bags</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-          </div>
-          <div class="car-foot">
-            <div class="car-price">RM 180 <small>/day</small></div>
-            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card reveal delay-3">
-        <div class="car-img">
-          <span class="car-tag">Luxury</span>
-          <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&q=85" alt="Vellfire">
-        </div>
-        <div class="car-body">
-          <h4>Toyota Vellfire</h4>
-          <p class="car-type">MPV • Premium</p>
-          <div class="car-specs">
-            <span><i class="fa-solid fa-user"></i> 7 Seats</span>
-            <span><i class="fa-solid fa-suitcase"></i> 6 Bags</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-          </div>
-          <div class="car-foot">
-            <div class="car-price">RM 450 <small>/day</small></div>
-            <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
-          </div>
-        </div>
+      <div class="legend-item">
+        <span class="dot dot-peak"></span>
+        <span><strong>Peak Season</strong> — Public holidays, festive periods &amp; school holidays</span>
       </div>
     </div>
-    <div style="text-align:center; margin-top:42px;" class="reveal">
-      <a href="#" class="btn btn-cyan">View All Vehicles <span class="arr"><i class="fa-solid fa-arrow-right"></i></span></a>
+
+    <!-- Filter Tabs -->
+    <div class="car-filter reveal" id="carFilter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="budget">Budget</button>
+      <button class="filter-btn" data-filter="sedan">Sedan</button>
+      <button class="filter-btn" data-filter="mpv">MPV / Family</button>
+      <button class="filter-btn" data-filter="van">Van</button>
     </div>
+
+    <div class="car-grid" id="carGrid">
+      <!-- Cards rendered by JS from CAR_LIST -->
+    </div>
+    <p class="car-empty" id="carEmpty" style="display:none; text-align:center; color:var(--text-dim); padding: 40px 0;">
+      <i class="fa-regular fa-face-frown"></i> No cars found in this category.
+    </p>
   </div>
 </section>
 
@@ -2224,13 +2416,15 @@ section { padding: 70px 0; position: relative; }
       <h2 class="h-section">Recent Gallery</h2>
     </div>
     <div class="gal">
-      <div class="gal-i one reveal"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=85" alt=""></div>
-      <div class="gal-i tall reveal delay-1"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500&q=85" alt=""></div>
-      <div class="gal-i tall reveal delay-2"><img src="https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?w=500&q=85" alt=""></div>
-      <div class="gal-i tall reveal delay-1"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=85" alt=""></div>
-      <div class="gal-i five reveal delay-2"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=400&q=85" alt=""></div>
-      <div class="gal-i reveal"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=85" alt=""></div>
-      <div class="gal-i reveal delay-3"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400&q=85" alt=""></div>
+      <div class="gal-i one reveal"><img src="assets/gallery/gallery-01.png" alt="Customer with a silver Nissan Almera at the pickup area"></div>
+      <div class="gal-i tall reveal delay-1"><img src="assets/gallery/gallery-02.png" alt="Customer with a grey Toyota SUV"></div>
+      <div class="gal-i tall reveal delay-2"><img src="assets/gallery/gallery-03.png" alt="Customer with a silver Perodua Axia"></div>
+      <div class="gal-i tall reveal delay-1"><img src="assets/gallery/gallery-04.png" alt="Customer with a white Toyota sedan"></div>
+      <div class="gal-i five reveal delay-2"><img src="assets/gallery/gallery-05.png" alt="Customer with a silver Perodua Axia"></div>
+      <div class="gal-i reveal"><img src="assets/gallery/gallery-06.png" alt="Customer with a silver Perodua Bezza"></div>
+      <div class="gal-i reveal delay-3"><img src="assets/gallery/gallery-07.png" alt="Customer with a white Toyota van"></div>
+      <div class="gal-i reveal"><img src="assets/gallery/gallery-08.png" alt="Customer with a white Nissan Almera"></div>
+      <div class="gal-i reveal delay-1"><img src="assets/gallery/gallery-09.png" alt="Customer with a black Toyota SUV"></div>
     </div>
 
     <div class="stats">
@@ -2262,7 +2456,7 @@ section { padding: 70px 0; position: relative; }
 <section class="tes-sec doodle-bg">
   <div class="wrap">
     <div class="title-block reveal">
-      <span class="script">Testimonial</span>
+      <span class="script">Testimonials</span>
       <h2 class="h-section">What Client Say About us</h2>
     </div>
     <div class="tes-grid">
@@ -2274,7 +2468,7 @@ section { padding: 70px 0; position: relative; }
           </div>
           <div class="tes-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         </div>
-        <p>"Service Mikha Resources memang topnotch! Booking island hopping dengan diorang dan tour guide friendly sangat. Akan repeat next time datang Langkawi."</p>
+        <p>"Mikha Resources service is truly top-notch! We booked island hopping with them and the tour guide was very friendly. Will definitely book again on our next Langkawi trip."</p>
         <div class="tes-quote">99</div>
       </div>
       <div class="tes-card hero-tes reveal delay-1">
@@ -2296,7 +2490,7 @@ section { padding: 70px 0; position: relative; }
           </div>
           <div class="tes-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         </div>
-        <p>"Sunset cruise dengan Mikha super memorable! Makanan sedap, captain ramah dan view sunset cantik gilaa. Worth every ringgit. Thank you Mikha team!"</p>
+        <p>"The sunset cruise with Mikha was super memorable! Great food, friendly captain, and an amazing sunset view. Worth every ringgit. Thank you Mikha team!"</p>
         <div class="tes-quote">99</div>
       </div>
     </div>
@@ -2327,7 +2521,7 @@ section { padding: 70px 0; position: relative; }
             <span class="tag">RESOURCES</span>
           </span>
         </a>
-        <p>Your trusted Langkawi travel partner. Tour bookings, car rental, airport transfer — semua dalam satu tempat dengan harga terbaik.</p>
+        <p>Your trusted Langkawi travel partner. Tour bookings, car rental, and airport transfer — all in one place at the best rates.</p>
         <div class="f-social">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2384,6 +2578,7 @@ section { padding: 70px 0; position: relative; }
       <div class="modal-price">
         <span id="modalPrice">RM 0</span>
         <small id="modalPriceUnit"></small>
+        <span class="season-pill low" id="modalSeasonPill" style="display:none;"><i class="fa-solid fa-tag"></i> <span id="modalSeasonLabel">Low Season</span></span>
       </div>
 
       <!-- Quick stats grid -->
@@ -2405,12 +2600,6 @@ section { padding: 70px 0; position: relative; }
       <section class="modal-section">
         <h4><i class="fa-solid fa-circle-check" style="background:#dcf5e0; color:#25D366;"></i> What's Included</h4>
         <ul class="check-list" id="includedList"></ul>
-      </section>
-
-      <!-- Not Included -->
-      <section class="modal-section">
-        <h4><i class="fa-solid fa-circle-xmark" style="background:#fde0e0; color:#e84545;"></i> Not Included</h4>
-        <ul class="x-list" id="notIncludedList"></ul>
       </section>
 
       <!-- What to Bring (tour) -->
@@ -2460,6 +2649,7 @@ section { padding: 70px 0; position: relative; }
           <div class="field">
             <label for="carPickupDate">Pickup Date</label>
             <input type="date" id="carPickupDate">
+            <div class="date-hint" id="pickupHint"></div>
           </div>
           <div class="field">
             <label for="carPickupTime">Pickup Time</label>
@@ -2472,6 +2662,7 @@ section { padding: 70px 0; position: relative; }
           <div class="field">
             <label for="carReturnDate">Return Date</label>
             <input type="date" id="carReturnDate">
+            <div class="date-hint" id="returnHint"></div>
           </div>
           <div class="field">
             <label for="carReturnTime">Return Time</label>
@@ -2480,6 +2671,23 @@ section { padding: 70px 0; position: relative; }
             </select>
           </div>
         </div>
+
+        <!-- Price Summary -->
+        <div class="price-summary" id="priceSummary" style="display:none;">
+          <div class="ps-header">
+            <i class="fa-solid fa-receipt"></i> Price Breakdown
+          </div>
+          <div class="ps-rows" id="psRows">
+            <!-- daily rows render here -->
+          </div>
+          <div class="ps-divider"></div>
+          <div class="ps-total">
+            <span>Total <small id="psDays"></small></span>
+            <strong id="psTotal">RM 0</strong>
+          </div>
+          <div class="ps-note" id="psNote"></div>
+        </div>
+
         <div class="field">
           <label for="carLocation">Pickup Location</label>
           <select id="carLocation">
@@ -2784,52 +2992,187 @@ document.querySelectorAll('.cat-card').forEach(card => {
     }
   };
 
-  const CAR_DATA = {
-    'Perodua Axia': {
-      stats: [
-        { icon: 'fa-user', label: 'Seats', value: '4 Persons' },
-        { icon: 'fa-suitcase', label: 'Luggage', value: '2 Bags' },
-        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Petrol' }
-      ],
-      description: 'Compact and fuel-efficient — ideal for solo travelers, couples, or budget-conscious explorers. Easy to park around Pantai Cenang and Kuah town. Best value for short trips around the island.',
-      included: ['Comprehensive insurance', 'Free hotel/airport delivery', 'Unlimited mileage', '24/7 roadside assistance', 'GPS phone holder', 'Full-tank to full-tank policy'],
-      notIncluded: ['Fuel (return same level)', 'Tolls & parking', 'Traffic fines', 'Cleaning fee if returned dirty'],
-      requirements: ['Min 21 years old', 'Valid driving license (1+ year)', 'Passport / IC for verification', 'Refundable deposit RM 200', 'Credit/debit card or cash']
-    },
-    'Perodua Myvi': {
-      stats: [
-        { icon: 'fa-user', label: 'Seats', value: '5 Persons' },
-        { icon: 'fa-suitcase', label: 'Luggage', value: '3 Bags' },
-        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Petrol' }
-      ],
-      description: 'Malaysia\'s most popular hatchback — perfect balance of space, comfort and fuel efficiency. Great for couples or small families. Smooth automatic transmission, ideal for first-time visitors.',
-      included: ['Comprehensive insurance', 'Free hotel/airport delivery', 'Unlimited mileage', '24/7 roadside assistance', 'Bluetooth audio', 'Full-tank policy'],
-      notIncluded: ['Fuel', 'Tolls & parking', 'Traffic fines', 'Late return fee (RM 25/hour)'],
-      requirements: ['Min 21 years old', 'Valid driving license (1+ year)', 'Passport / IC', 'Refundable deposit RM 250', 'Credit/debit card or cash']
-    },
-    'Proton X50': {
-      stats: [
-        { icon: 'fa-user', label: 'Seats', value: '5 Persons' },
-        { icon: 'fa-suitcase', label: 'Luggage', value: '4 Bags' },
-        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Turbo Petrol' }
-      ],
-      description: 'Modern compact SUV with turbo engine and premium features. Ideal for families exploring all corners of Langkawi — from Kuah town to Pantai Tengah. Higher ride comfort and tech features.',
-      included: ['Comprehensive insurance', 'Free delivery within Langkawi', 'Unlimited mileage', '24/7 roadside assistance', 'Apple CarPlay / Android Auto', 'Reverse camera & sensors', 'Full-tank policy'],
-      notIncluded: ['Fuel (RON 95+)', 'Tolls & parking', 'Traffic fines', 'Damage excess (RM 1,500)'],
-      requirements: ['Min 23 years old', 'Valid driving license (2+ years)', 'Passport / IC', 'Refundable deposit RM 500', 'Credit card preferred']
-    },
-    'Toyota Vellfire': {
-      stats: [
-        { icon: 'fa-user', label: 'Seats', value: '7 Persons' },
-        { icon: 'fa-suitcase', label: 'Luggage', value: '6 Bags' },
-        { icon: 'fa-gas-pump', label: 'Fuel', value: 'Premium Petrol' }
-      ],
-      description: 'Luxury 7-seater MPV for groups, families or VIP transfers. Captain seats with leather, dual sunroof, premium audio. Ideal for airport pickups and large group outings around the island.',
-      included: ['Comprehensive insurance', 'Free delivery within Langkawi', 'Unlimited mileage', '24/7 roadside assistance', 'Premium leather interior', 'Dual-zone climate control', 'Driver service available (+RM 150/day)', 'Full-tank policy'],
-      notIncluded: ['Fuel (RON 97+)', 'Tolls & parking', 'Traffic fines', 'Damage excess (RM 3,000)'],
-      requirements: ['Min 25 years old', 'Valid driving license (3+ years)', 'Passport / IC', 'Refundable deposit RM 1,000', 'Credit card mandatory']
-    }
+  /* ============== FULL CAR LIST (from official price sheet) ============== */
+  // category: budget | sedan | suv | mpv | van | luxury
+  // tag: Budget | Popular | Family | New | Premium | Luxury | Limited
+  const CAR_LIST = [
+    { name:'Axia', cat:'budget', low:80,  peak:100, seats:4, bags:2, type:'Compact • Auto', tag:'Budget', img:'assets/axia.png' },
+    { name:'Bezza', cat:'sedan', low:100, peak:120, seats:5, bags:3, type:'Sedan • Auto', tag:'Sedan', img:'assets/bezza.png' },
+    { name:'Almera New', cat:'sedan', low:120, peak:150, seats:5, bags:3, type:'Sedan • Auto', tag:'New', img:'assets/almera-new.png' },
+    { name:'Vios', cat:'sedan', low:120, peak:150, seats:5, bags:3, type:'Sedan • Auto', tag:'Popular', img:'assets/vios.png' },
+    { name:'Honda City New', cat:'sedan', low:120, peak:150, seats:5, bags:3, type:'Sedan • Auto', tag:'New', img:'assets/honda-city-new.png' },
+    { name:'Alza New', cat:'mpv', low:140, peak:170, seats:7, bags:4, type:'MPV • Auto', tag:'New', img:'assets/alza-new.png' },
+    { name:'Veloz', cat:'mpv', low:150, peak:180, seats:7, bags:4, type:'MPV • Auto', tag:'New', img:'assets/veloz.png' },
+    { name:'Innova Zenix', cat:'mpv', low:230, peak:280, seats:7, bags:5, type:'MPV • Hybrid', tag:'New', img:'assets/innova-zenix.png' },
+    { name:'Sarena New', cat:'mpv', low:200, peak:250, seats:8, bags:5, type:'MPV • Auto', tag:'New', img:'assets/serena-new.png' },
+    { name:'Toyota Hiace Manual', cat:'van', low:300, peak:400, seats:11, bags:8, type:'Van • Manual', tag:'Group', img:'assets/toyota-hiace-manual.png' },
+    { name:'Toyota Hiace Auto', cat:'van', low:350, peak:450, seats:11, bags:8, type:'Van • Auto', tag:'Group', img:'assets/toyota-hiace-auto.png' }
+  ];
+
+  /* ============== MALAYSIA PUBLIC HOLIDAYS (Kedah / Langkawi) ============== */
+  // Source: Official Malaysia 2026 calendar — federal + Kedah state holidays.
+  // Note: Kedah does NOT observe New Year's Day or Thaipusam; weekend is Fri-Sat.
+  const MY_HOLIDAYS = {
+    // ----- 2026 -----
+    '2026-02-17': 'Chinese New Year',
+    '2026-02-18': 'Chinese New Year (Day 2)',
+    '2026-02-19': 'Start of Ramadan (Kedah)',
+    '2026-03-21': 'Hari Raya Aidilfitri',
+    '2026-03-22': 'Hari Raya Aidilfitri (Day 2)',
+    '2026-03-23': 'Hari Raya Replacement Holiday',
+    '2026-05-01': 'Labour Day',
+    '2026-05-03': 'Labour Day Holiday',
+    '2026-05-27': 'Hari Raya Aidiladha',
+    '2026-05-28': 'Hari Raya Aidiladha (Day 2, Kedah)',
+    '2026-05-31': 'Wesak Day',
+    '2026-06-01': 'Birthday of YDP Agong',
+    '2026-06-17': 'Awal Muharram',
+    '2026-06-21': 'Sultan of Kedah\'s Birthday',
+    '2026-08-25': 'Maulidur Rasul',
+    '2026-08-31': 'Merdeka Day',
+    '2026-09-16': 'Malaysia Day',
+    '2026-11-08': 'Deepavali',
+    '2026-12-25': 'Christmas Day',
+    '2026-12-27': 'Christmas Holiday',
+    // ----- 2027 -----
+    '2027-01-06': 'Isra and Mi\'raj',
+    '2027-02-06': 'Chinese New Year',
+    '2027-02-07': 'Chinese New Year (Day 2)',
+    '2027-02-08': 'Start of Ramadan (Kedah)',
+    '2027-03-10': 'Hari Raya Aidilfitri',
+    '2027-03-11': 'Hari Raya Aidilfitri (Day 2)'
   };
+
+  // Peak season ranges (school holidays + festive run-up)
+  // Peak rate also applies during these date ranges in addition to single holidays
+  const PEAK_RANGES = [
+    { from:'2026-03-19', to:'2026-03-25', label:'Hari Raya Aidilfitri festive period' },
+    { from:'2026-05-26', to:'2026-06-02', label:'Hari Raya Aidiladha & Agong\'s Birthday period' },
+    { from:'2026-06-19', to:'2026-06-21', label:'Sultan of Kedah\'s Birthday Long Weekend' },
+    { from:'2026-08-29', to:'2026-09-01', label:'Merdeka Day Long Weekend' },
+    { from:'2026-12-13', to:'2027-01-04', label:'Year-End School Holidays' },
+    { from:'2026-02-15', to:'2026-02-22', label:'Chinese New Year Festive Period' }
+  ];
+
+  function isPeakDate(isoDate) {
+    if (!isoDate) return { peak:false };
+    if (MY_HOLIDAYS[isoDate]) return { peak:true, label:MY_HOLIDAYS[isoDate], type:'holiday' };
+    for (const r of PEAK_RANGES) {
+      if (isoDate >= r.from && isoDate <= r.to) {
+        return { peak:true, label:r.label, type:'range' };
+      }
+    }
+    return { peak:false };
+  }
+
+  /* ============== AUTO-GENERATE CAR_DATA ============== */
+  function makeCarData(c) {
+    const seatLabel = c.seats + ' Persons';
+    const bagsLabel = c.bags + ' Bags';
+    const fuelLabel = c.cat === 'luxury' ? 'Premium Petrol'
+                    : c.cat === 'van' ? 'Diesel/Petrol'
+                    : c.type.includes('Turbo') ? 'Turbo Petrol'
+                    : 'Petrol';
+
+    let desc;
+    if (c.cat === 'budget') desc = `Compact and fuel-efficient — ideal for solo travelers, couples, or budget-conscious explorers. Easy to park around Pantai Cenang and Kuah town.`;
+    else if (c.cat === 'sedan') desc = `Comfortable sedan with smooth ride quality and ample boot space. Perfect for couples or small families exploring Langkawi at their own pace.`;
+    else if (c.cat === 'suv') desc = `Versatile SUV with raised driving position and great road presence. Handles both city streets and rural roads of Langkawi with ease.`;
+    else if (c.cat === 'mpv') desc = `Spacious 7-seater MPV — perfect for families or small groups. Plenty of room for luggage and comfortable for longer drives around the island.`;
+    else if (c.cat === 'van') desc = `Roomy van for large groups, big families, or tour parties. Ideal for airport transfers and group sightseeing across Langkawi.`;
+    else if (c.cat === 'luxury') desc = `Premium luxury vehicle with refined interior, advanced features, and superior driving experience. Make your Langkawi trip extra special.`;
+
+    const baseDeposit = c.cat === 'budget' ? 200 : c.cat === 'sedan' ? 300 : c.cat === 'suv' ? 500 : c.cat === 'mpv' ? 400 : c.cat === 'van' ? 600 : 1500;
+    const minAge = c.cat === 'luxury' || c.cat === 'van' ? 25 : c.cat === 'suv' || c.cat === 'mpv' ? 23 : 21;
+    const minLicense = minAge === 25 ? 3 : minAge === 23 ? 2 : 1;
+
+    return {
+      stats: [
+        { icon: 'fa-user', label: 'Seats', value: seatLabel },
+        { icon: 'fa-suitcase', label: 'Luggage', value: bagsLabel },
+        { icon: 'fa-gas-pump', label: 'Fuel', value: fuelLabel }
+      ],
+      description: desc,
+      pricing: { low: c.low, peak: c.peak, priceRange: c.priceRange || false },
+      included: [
+        'Comprehensive insurance',
+        'Free hotel/airport delivery in Langkawi',
+        'Unlimited mileage',
+        '24/7 roadside assistance',
+        c.cat === 'luxury' ? 'Premium leather interior' : 'Bluetooth audio / phone holder',
+        'Full-tank to full-tank policy'
+      ],
+      notIncluded: [
+        'Fuel (return same level)',
+        'Tolls & parking',
+        'Traffic fines',
+        'Damage excess (varies by vehicle)',
+        'Late return fee'
+      ],
+      requirements: [
+        `Min ${minAge} years old`,
+        `Valid driving license (${minLicense}+ year${minLicense>1?'s':''})`,
+        'Passport / IC for verification',
+        `Refundable deposit RM ${baseDeposit}`,
+        c.cat === 'luxury' ? 'Credit card mandatory' : 'Credit/debit card or cash'
+      ]
+    };
+  }
+
+  const CAR_DATA = {};
+  CAR_LIST.forEach(c => { CAR_DATA[c.name] = makeCarData(c); });
+
+  /* ============== RENDER CAR GRID ============== */
+  const carGrid = document.getElementById('carGrid');
+  const carEmpty = document.getElementById('carEmpty');
+
+  function renderCars(filter) {
+    const list = filter === 'all' ? CAR_LIST : CAR_LIST.filter(c => c.cat === filter);
+    if (list.length === 0) {
+      carGrid.innerHTML = '';
+      carEmpty.style.display = '';
+      return;
+    }
+    carEmpty.style.display = 'none';
+    carGrid.innerHTML = list.map((c, idx) => {
+      const delay = idx % 4;
+      const priceDisplay = c.priceRange
+        ? `RM ${c.low}–${c.peak} <small>/day</small>`
+        : `RM ${c.low} <small>/day</small>`;
+      return `
+        <div class="car-card reveal in delay-${delay}" data-cat="${c.cat}">
+          <div class="car-img">
+            <span class="car-tag">${c.tag}</span>
+            <span class="car-fav"><i class="fa-regular fa-heart"></i></span>
+            <img src="${c.img}" alt="${c.name}" loading="lazy">
+          </div>
+          <div class="car-body">
+            <h4>${c.name}</h4>
+            <p class="car-type">${c.type}</p>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-user"></i> ${c.seats} Seats</span>
+              <span><i class="fa-solid fa-suitcase"></i> ${c.bags} Bags</span>
+              <span><i class="fa-solid fa-gas-pump"></i> ${c.cat === 'luxury' ? 'Premium' : c.cat === 'van' ? 'Diesel' : 'Petrol'}</span>
+            </div>
+            <div class="car-foot">
+              <div class="car-price">${priceDisplay}</div>
+              <a href="#" class="car-rent">Rent <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></a>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    // Re-attach rent listeners (delegated below in main flow, but rebind for safety)
+    bindCarRentListeners();
+  }
+
+  // Filter button listeners
+  document.querySelectorAll('#carFilter .filter-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#carFilter .filter-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      renderCars(b.dataset.filter);
+    });
+  });
 
   /* ============== TIME / PAX OPTIONS ============== */
   const hours = [];
@@ -2851,7 +3194,7 @@ document.querySelectorAll('.cat-card').forEach(card => {
   for (let i = 1; i <= 12; i++) paxArr.push(i + (i === 1 ? ' Person' : ' Persons'));
   fillSelect('tourPax', paxArr, 'Select pax');
 
-  const todayIso = new Date().toISOString().split('T')[0];
+  const todayIso = toLocalIso(new Date());
   modal.querySelectorAll('input[type="date"]').forEach(el => el.setAttribute('min', todayIso));
 
   /* ============== POPULATE MODAL ============== */
@@ -2876,11 +3219,9 @@ document.querySelectorAll('.cat-card').forEach(card => {
       ).join('');
     }
 
-    // Included / Not Included
+    // Included
     document.getElementById('includedList').innerHTML =
       data.included.map(i => '<li>' + i + '</li>').join('');
-    document.getElementById('notIncludedList').innerHTML =
-      data.notIncluded.map(i => '<li>' + i + '</li>').join('');
 
     // Bring (tour) or Requirements (car)
     if (currentMode === 'tour') {
@@ -2945,6 +3286,14 @@ document.querySelectorAll('.cat-card').forEach(card => {
       modalPrice.textContent = p.amount;
       modalPriceUnit.textContent = p.unit;
 
+      // Hide season pill / car-only UI when in tour mode
+      const sp = document.getElementById('modalSeasonPill');
+      if (sp) sp.style.display = 'none';
+      const ps = document.getElementById('priceSummary');
+      if (ps) ps.style.display = 'none';
+      document.getElementById('pickupHint').classList.remove('show');
+      document.getElementById('returnHint').classList.remove('show');
+
       tourForm.style.display = '';
       carForm.style.display = 'none';
 
@@ -2962,42 +3311,325 @@ document.querySelectorAll('.cat-card').forEach(card => {
   });
 
   /* ============== CAR RENTAL ============== */
-  document.querySelectorAll('.car-card .car-rent').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const card = btn.closest('.car-card');
-      const title = card.querySelector('h4').textContent.trim();
-      const type  = card.querySelector('.car-type').textContent.trim();
-      const priceText = card.querySelector('.car-price').textContent.trim();
-      const img = card.querySelector('.car-img img').src;
+  let currentCar = null;
+  const seasonPill = document.getElementById('modalSeasonPill');
+  const seasonLabel = document.getElementById('modalSeasonLabel');
+  const pickupHint = document.getElementById('pickupHint');
+  const returnHint = document.getElementById('returnHint');
+  const priceSummary = document.getElementById('priceSummary');
+  const psRows = document.getElementById('psRows');
+  const psTotal = document.getElementById('psTotal');
+  const psDays = document.getElementById('psDays');
+  const psNote = document.getElementById('psNote');
 
-      mode = 'car';
-      modalImgWrap.classList.add('car');
-      modalImg.src = img;
-      modalImg.alt = title;
-      modalTitle.textContent = title;
-      modalLoc.innerHTML = '<i class="fa-solid fa-car"></i> ' + type;
+  // Format ISO date as readable: "Sat, 21 Mar 2026"
+  function fmtDate(iso) {
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  }
 
-      const p = splitPrice(priceText);
-      modalPrice.textContent = p.amount;
-      modalPriceUnit.textContent = p.unit;
+  // Convert a Date object to YYYY-MM-DD using LOCAL time (not UTC).
+  // This avoids the bug where toISOString() shifts dates back by one in UTC+ timezones.
+  function toLocalIso(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
 
-      tourForm.style.display = 'none';
-      carForm.style.display = '';
+  // Parse a time string like "8:00 AM" or "5:00 PM" → hour in 24h (0-23)
+  function parseHour(timeStr) {
+    if (!timeStr) return null;
+    const m = timeStr.match(/^(\d+):\d+\s*(AM|PM)$/i);
+    if (!m) return null;
+    let h = parseInt(m[1], 10);
+    const period = m[2].toUpperCase();
+    if (period === 'PM' && h !== 12) h += 12;
+    if (period === 'AM' && h === 12) h = 0;
+    return h;
+  }
 
-      // Populate detailed sections
-      populate(CAR_DATA[title], 'car');
+  // Late return fee config:
+  //   ≤ 0 hours late  → no fee
+  //   1–3 hours late  → RM 25 × extra hours (flat per-hour)
+  //   ≥ 4 hours late  → +1 full extra day at the return-day's season rate
+  const LATE_HOURLY_FEE = 25;
+  const LATE_FULL_DAY_THRESHOLD = 4;
 
-      // Reset form
-      document.getElementById('carPickupDate').value = '';
-      document.getElementById('carPickupTime').value = '';
-      document.getElementById('carReturnDate').value = '';
-      document.getElementById('carReturnTime').value = '';
-      document.getElementById('carNote').value = '';
+  // Track whether user has manually edited the return time
+  let returnTimeDirty = false;
 
-      openModal();
-    });
+  // Update one date hint badge
+  function setHint(el, iso) {
+    if (!iso) { el.classList.remove('show', 'peak', 'low'); el.innerHTML = ''; return; }
+    const r = isPeakDate(iso);
+    el.classList.add('show');
+    if (r.peak) {
+      el.classList.add('peak'); el.classList.remove('low');
+      el.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + r.label + ' • Peak Rate';
+    } else {
+      el.classList.add('low'); el.classList.remove('peak');
+      el.innerHTML = '<i class="fa-solid fa-check"></i> Low Season Rate';
+    }
+  }
+
+  // Update season pill near price (driven by whether ANY date in window is peak)
+  function setSeasonPill(anyPeak) {
+    if (!currentCar) return;
+    const c = currentCar;
+    seasonPill.style.display = '';
+    if (anyPeak) {
+      seasonPill.classList.remove('low');
+      seasonPill.classList.add('peak');
+      seasonLabel.textContent = 'Peak Rate Applied';
+      // Highlight peak price in main display
+      modalPrice.textContent = c.priceRange ? `RM ${c.low}–${c.peak}` : `RM ${c.peak}`;
+    } else {
+      seasonPill.classList.remove('peak');
+      seasonPill.classList.add('low');
+      seasonLabel.textContent = 'Low Season';
+      modalPrice.textContent = c.priceRange ? `RM ${c.low}–${c.peak}` : `RM ${c.low}`;
+    }
+    modalPriceUnit.textContent = '/day';
+  }
+
+  // Build the day-by-day price breakdown
+  function buildPriceSummary(pickupIso, returnIso, pickupTime, returnTime) {
+    if (!currentCar || !pickupIso || !returnIso || returnIso < pickupIso) {
+      priceSummary.style.display = 'none';
+      setSeasonPill(false);
+      return;
+    }
+    const c = currentCar;
+    const start = new Date(pickupIso + 'T00:00:00');
+    const end = new Date(returnIso + 'T00:00:00');
+    const msPerDay = 86400000;
+    let days = Math.round((end - start) / msPerDay);
+    if (days < 1) days = 1;
+
+    let rows = [];
+    let total = 0;
+    let anyPeak = false;
+    const cur = new Date(start);
+    let lastDayPeak = false;
+    for (let i = 0; i < days; i++) {
+      const iso = toLocalIso(cur);
+      const r = isPeakDate(iso);
+      const rate = r.peak ? c.peak : c.low;
+      if (r.peak) anyPeak = true;
+      total += rate;
+      rows.push({
+        iso: iso,
+        label: r.peak ? r.label : null,
+        rate: rate,
+        peak: r.peak,
+        type: 'day'
+      });
+      lastDayPeak = r.peak;
+      cur.setDate(cur.getDate() + 1);
+    }
+
+    // ---- Late-return fee calculation ----
+    let lateFee = 0;
+    let lateInfo = null;
+    const pHour = parseHour(pickupTime);
+    const rHour = parseHour(returnTime);
+    if (pHour !== null && rHour !== null) {
+      const extraHours = rHour - pHour;
+      if (extraHours > 0) {
+        if (extraHours >= LATE_FULL_DAY_THRESHOLD) {
+          // Charge as +1 full extra day at return-day's season rate
+          const extraDayRate = lastDayPeak ? c.peak : c.low;
+          lateFee = extraDayRate;
+          lateInfo = {
+            type: 'fullday',
+            hours: extraHours,
+            rate: extraDayRate,
+            peak: lastDayPeak
+          };
+          rows.push({
+            iso: '',
+            label: `Late return (+${extraHours}h ≥ ${LATE_FULL_DAY_THRESHOLD}h) — Extra day at ${lastDayPeak ? 'peak' : 'low'} rate`,
+            rate: extraDayRate,
+            peak: lastDayPeak,
+            type: 'fullday-fee'
+          });
+        } else {
+          lateFee = extraHours * LATE_HOURLY_FEE;
+          lateInfo = {
+            type: 'hourly',
+            hours: extraHours,
+            rate: LATE_HOURLY_FEE
+          };
+          rows.push({
+            iso: '',
+            label: `Late return fee (${extraHours} hour${extraHours > 1 ? 's' : ''} × RM ${LATE_HOURLY_FEE})`,
+            rate: lateFee,
+            peak: false,
+            type: 'hourly-fee'
+          });
+        }
+        total += lateFee;
+      }
+    }
+
+    // Render rows
+    psRows.innerHTML = rows.map(row => {
+      if (row.type === 'day') {
+        return `
+          <div class="ps-row">
+            <div class="ps-date">
+              <span>${fmtDate(row.iso)}</span>
+              <span class="ps-tag ${row.peak ? 'peak' : 'low'}">${row.peak ? 'Peak' : 'Low'}</span>
+            </div>
+            <span class="ps-amt ${row.peak ? 'peak' : ''}">RM ${row.rate}</span>
+          </div>`;
+      } else {
+        // Fee rows
+        return `
+          <div class="ps-row ps-fee">
+            <div class="ps-date">
+              <i class="fa-solid fa-clock"></i>
+              <span>${row.label}</span>
+            </div>
+            <span class="ps-amt ${row.peak ? 'peak' : ''}">+ RM ${row.rate}</span>
+          </div>`;
+      }
+    }).join('');
+
+    psDays.textContent = '(' + days + ' day' + (days > 1 ? 's' : '') + (lateFee ? ' + late fee' : '') + ')';
+    psTotal.textContent = c.priceRange
+      ? `RM ${total.toLocaleString()}+`
+      : `RM ${total.toLocaleString()}`;
+
+    // Note
+    if (lateInfo && lateInfo.type === 'fullday') {
+      psNote.textContent = `Return ${lateInfo.hours}h after pickup time triggers a full extra day charge (≥ ${LATE_FULL_DAY_THRESHOLD}h late).`;
+    } else if (lateInfo && lateInfo.type === 'hourly') {
+      psNote.textContent = `Late return fee: RM ${LATE_HOURLY_FEE} per extra hour beyond pickup time. Up to ${LATE_FULL_DAY_THRESHOLD - 1}h, then a full extra day applies.`;
+    } else if (c.priceRange) {
+      psNote.textContent = 'Final rate negotiable for luxury vehicles. Rate shown is estimated.';
+    } else if (anyPeak) {
+      psNote.textContent = 'Peak season rates apply on public holidays & festive periods (highlighted above). Return time matches pickup time — change it later for hourly extra fee.';
+    } else {
+      psNote.textContent = 'All days within this window are charged at low season rate. Return time matches pickup time — change it later for hourly extra fee.';
+    }
+
+    priceSummary.style.display = '';
+    setSeasonPill(anyPeak);
+
+    // Stash for WhatsApp message
+    currentCar._lastTotal = total;
+    currentCar._lastDays = days;
+    currentCar._lastAnyPeak = anyPeak;
+    currentCar._lastRows = rows;
+    currentCar._lastLateFee = lateFee;
+    currentCar._lastLateInfo = lateInfo;
+  }
+
+  function checkDates() {
+    const pdEl = document.getElementById('carPickupDate');
+    const rdEl = document.getElementById('carReturnDate');
+    const ptEl = document.getElementById('carPickupTime');
+    const rtEl = document.getElementById('carReturnTime');
+    const pd = pdEl.value;
+    const rd = rdEl.value;
+    const pt = ptEl.value;
+    const rt = rtEl.value;
+
+    // Per-date hints
+    setHint(pickupHint, pd);
+    setHint(returnHint, rd);
+
+    // Visual border highlight on the inputs themselves
+    pdEl.classList.toggle('is-holiday', !!(pd && isPeakDate(pd).peak));
+    rdEl.classList.toggle('is-holiday', !!(rd && isPeakDate(rd).peak));
+
+    // Build summary if both dates set
+    if (pd && rd && rd >= pd) {
+      buildPriceSummary(pd, rd, pt, rt);
+    } else {
+      priceSummary.style.display = 'none';
+      // Still show the pill based on pickup alone
+      if (pd) setSeasonPill(isPeakDate(pd).peak);
+      else if (currentCar) setSeasonPill(false);
+    }
+  }
+
+  // ---- Pickup time → mirror to return time (only if user hasn't manually changed return time) ----
+  document.getElementById('carPickupTime').addEventListener('change', () => {
+    const ptEl = document.getElementById('carPickupTime');
+    const rtEl = document.getElementById('carReturnTime');
+    if (!returnTimeDirty && ptEl.value) {
+      rtEl.value = ptEl.value;
+    }
+    checkDates();
   });
+
+  // ---- Return time: mark dirty when user picks it themselves, then check ----
+  document.getElementById('carReturnTime').addEventListener('change', (e) => {
+    // Anything user-driven on return time means they took manual control
+    if (e.isTrusted) returnTimeDirty = true;
+    checkDates();
+  });
+
+  function bindCarRentListeners() {
+    document.querySelectorAll('.car-card .car-rent').forEach(btn => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const card = btn.closest('.car-card');
+        const title = card.querySelector('h4').textContent.trim();
+        const type  = card.querySelector('.car-type').textContent.trim();
+        const img = card.querySelector('.car-img img').src;
+
+        // Find car in CAR_LIST
+        const car = CAR_LIST.find(c => c.name === title);
+        currentCar = car;
+
+        mode = 'car';
+        modalImgWrap.classList.add('car');
+        modalImg.src = img;
+        modalImg.alt = title;
+        modalTitle.textContent = title;
+        modalLoc.innerHTML = '<i class="fa-solid fa-car"></i> ' + type;
+
+        // Default to low season price
+        setSeasonPill(false);
+
+        tourForm.style.display = 'none';
+        carForm.style.display = '';
+
+        // Populate detailed sections
+        populate(CAR_DATA[title], 'car');
+
+        // Reset form
+        document.getElementById('carPickupDate').value = '';
+        document.getElementById('carPickupTime').value = '';
+        document.getElementById('carReturnDate').value = '';
+        document.getElementById('carReturnTime').value = '';
+        document.getElementById('carNote').value = '';
+        document.getElementById('carPickupDate').classList.remove('is-holiday');
+        document.getElementById('carReturnDate').classList.remove('is-holiday');
+        pickupHint.classList.remove('show');
+        returnHint.classList.remove('show');
+        priceSummary.style.display = 'none';
+        returnTimeDirty = false;
+
+        openModal();
+      });
+    });
+  }
+
+  // Pickup or Return date change → re-check
+  document.getElementById('carPickupDate').addEventListener('change', checkDates);
+  document.getElementById('carPickupDate').addEventListener('input', checkDates);
+  document.getElementById('carReturnDate').addEventListener('change', checkDates);
+  document.getElementById('carReturnDate').addEventListener('input', checkDates);
+
+  // Initial render → all cars
+  renderCars('all');
 
   /* ============== VALIDATION & SUBMIT ============== */
   function markError(el, ok) {
@@ -3019,7 +3651,7 @@ document.querySelectorAll('.cat-card').forEach(card => {
       ok &= markError(timeEl, !!timeEl.value);
       ok &= markError(paxEl,  !!paxEl.value);
       if (!ok) {
-        alert('Sila isi semua field yang diperlukan.');
+        alert('Please fill in all required fields.');
         // Scroll to form
         modal.querySelector('.modal-divider').scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
@@ -3048,24 +3680,78 @@ document.querySelectorAll('.cat-card').forEach(card => {
       ok &= markError(rdEl, !!rdEl.value);
       ok &= markError(rtEl, !!rtEl.value);
       if (!ok) {
-        alert('Sila isi semua field yang diperlukan.');
+        alert('Please fill in all required fields.');
         modal.querySelector('.modal-divider').scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
 
       if (rdEl.value < pdEl.value) {
         rdEl.classList.add('field-error');
-        alert('Return date mesti selepas pickup date.');
+        alert('Return date must be after pickup date.');
         return;
       }
+
+      // Compute days, total and breakdown using the same logic as the on-screen summary
+      const startD = new Date(pdEl.value + 'T00:00:00');
+      const endD = new Date(rdEl.value + 'T00:00:00');
+      let days = Math.round((endD - startD) / 86400000);
+      if (days < 1) days = 1;
+
+      let total = 0;
+      let peakLabel = null;
+      const breakdown = [];
+      let lastDayPeak = false;
+      const cur = new Date(startD);
+      for (let i = 0; i < days; i++) {
+        const iso = toLocalIso(cur);
+        const r = isPeakDate(iso);
+        const rate = r.peak ? currentCar.peak : currentCar.low;
+        total += rate;
+        if (r.peak && !peakLabel) peakLabel = r.label;
+        breakdown.push({ iso, label: r.peak ? r.label : null, rate, peak: r.peak });
+        lastDayPeak = r.peak;
+        cur.setDate(cur.getDate() + 1);
+      }
+
+      // Late-return fee
+      let lateFeeLine = '';
+      const pHr = parseHour(ptEl.value);
+      const rHr = parseHour(rtEl.value);
+      if (pHr !== null && rHr !== null) {
+        const extra = rHr - pHr;
+        if (extra > 0) {
+          if (extra >= LATE_FULL_DAY_THRESHOLD) {
+            const extraDayRate = lastDayPeak ? currentCar.peak : currentCar.low;
+            total += extraDayRate;
+            lateFeeLine = '\n  • Late return (+' + extra + 'h) — Extra full day at ' + (lastDayPeak ? 'peak' : 'low') + ' rate — RM ' + extraDayRate;
+          } else {
+            const fee = extra * LATE_HOURLY_FEE;
+            total += fee;
+            lateFeeLine = '\n  • Late return fee (' + extra + 'h × RM ' + LATE_HOURLY_FEE + ') — RM ' + fee;
+          }
+        }
+      }
+
+      const seasonText = peakLabel
+        ? '🔴 Peak Season (incl. ' + peakLabel + ')'
+        : '🟢 Low Season';
+
+      // Build per-day breakdown lines (compact)
+      const breakdownLines = breakdown.map(b => {
+        const tag = b.peak ? '🔴 Peak' : '🟢 Low';
+        return '  • ' + b.iso + ' — ' + tag + ' — RM ' + b.rate;
+      }).join('\n') + lateFeeLine;
 
       msg =
         'Hi Mikha Resources! I would like to rent a car:\n\n' +
         '🚗 *Vehicle:* ' + modalTitle.textContent + '\n' +
-        '💰 *Rate:* ' + modalPrice.textContent + ' ' + modalPriceUnit.textContent + '\n' +
+        '📊 *Season:* ' + seasonText + '\n' +
         '📅 *Pickup:* ' + pdEl.value + ' at ' + ptEl.value + '\n' +
         '📅 *Return:* ' + rdEl.value + ' at ' + rtEl.value + '\n' +
-        '📍 *Location:* ' + loc;
+        '📍 *Location:* ' + loc + '\n\n' +
+        '🧾 *Breakdown (' + days + ' day' + (days > 1 ? 's' : '') + (lateFeeLine ? ' + late fee' : '') + '):*\n' +
+        breakdownLines + '\n\n' +
+        '💰 *Total:* RM ' + total.toLocaleString();
       if (note) msg += '\n📝 *Note:* ' + note;
       msg += '\n\nPlease confirm availability. Thank you!';
     }
