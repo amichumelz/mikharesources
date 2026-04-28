@@ -164,6 +164,11 @@ input, select, textarea { font-family: inherit; }
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
+.logo-img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+}
 .logo-orb {
   width: 46px; height: 46px;
   background: linear-gradient(135deg, var(--cyan), var(--cyan-300));
@@ -1887,10 +1892,7 @@ section { padding: 70px 0; position: relative; }
 
   /* Nav */
   .nav-wrap { min-height: 70px; padding: 0 16px; gap: 12px; }
-  .logo-orb { width: 40px; height: 40px; }
-  .logo-orb i { font-size: 0.9rem; }
-  .logo-text .name { font-size: 1.2rem; }
-  .logo-text .tag { font-size: 0.55rem; letter-spacing: 2px; }
+  .logo-img { width: 90px; }
 
   /* Hero */
   .hero { min-height: 580px; }
@@ -2026,11 +2028,7 @@ section { padding: 70px 0; position: relative; }
 <nav class="nav">
   <div class="nav-wrap">
     <a href="#" class="logo">
-      <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
-      <span class="logo-text">
-        <span class="name">MIKHA</span>
-        <span class="tag">RESOURCES</span>
-      </span>
+      <img src="assets/logo-mikha.png" alt="Mikha Resources logo" class="logo-img">
     </a>
     <ul class="nav-menu">
       <li><a href="#">Home <i class="fa-solid fa-caret-down"></i></a></li>
@@ -2050,11 +2048,7 @@ section { padding: 70px 0; position: relative; }
 <aside class="drawer" id="drawer">
   <div class="drawer-head">
     <a href="#" class="logo">
-      <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
-      <span class="logo-text">
-        <span class="name">MIKHA</span>
-        <span class="tag">RESOURCES</span>
-      </span>
+      <img src="assets/logo-mikha.png" alt="Mikha Resources logo" class="logo-img">
     </a>
     <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
   </div>
@@ -2515,11 +2509,7 @@ section { padding: 70px 0; position: relative; }
     <div class="f-grid">
       <div class="f-col f-about">
         <a href="#" class="logo">
-          <span class="logo-orb"><i class="fa-solid fa-plane"></i></span>
-          <span class="logo-text">
-            <span class="name">MIKHA</span>
-            <span class="tag">RESOURCES</span>
-          </span>
+          <img src="assets/logo-mikha.png" alt="Mikha Resources logo" class="logo-img">
         </a>
         <p>Your trusted Langkawi travel partner. Tour bookings, car rental, and airport transfer — all in one place at the best rates.</p>
         <div class="f-social">
