@@ -2118,6 +2118,7 @@ section { padding: 70px 0; position: relative; }
           <option>Cable Car &amp; Sky Bridge</option>
           <option>Mangrove Tour</option>
           <option>Sunset Cruise</option>
+          <option>Jet Ski Tour</option>
           <option>Car Rental</option>
         </select>
       </div>
@@ -2354,6 +2355,20 @@ section { padding: 70px 0; position: relative; }
           <div class="t-price">RM 280.00 <small>/Person</small></div>
           <div class="t-meta">
             <span class="days"><i class="fa-regular fa-clock"></i> 3 Hours</span>
+            <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="t-card reveal delay-1">
+        <div class="t-img">
+          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=85" alt="Jet ski tour along Langkawi coastline">
+        </div>
+        <div class="t-body">
+          <h4>Jet Ski Island Tour</h4>
+          <div class="t-loc"><i class="fa-solid fa-location-dot"></i>Pantai Cenang</div>
+          <div class="t-price">RM 199.00 <small>/Person</small></div>
+          <div class="t-meta">
+            <span class="days"><i class="fa-regular fa-clock"></i> 2 Hours</span>
             <a href="#" class="t-book">Book Now <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -2979,6 +2994,25 @@ document.querySelectorAll('.cat-card').forEach(card => {
       included: ['Catamaran cruise (3 hours)', 'BBQ buffet dinner', 'Free-flow soft drinks', 'Welcome cocktail', 'Live acoustic entertainment', 'Life jackets'],
       notIncluded: ['Alcoholic beverages (cash bar)', 'Hotel transfer (+RM 25)', 'Tips for crew', 'Photography service'],
       bring: ['Light jacket (sea breeze)', 'Camera for sunset shots', 'Smart casual attire', 'Sunglasses', 'Cash for bar', 'Sense of adventure!']
+    },
+    'Jet Ski Island Tour': {
+      stats: [
+        { icon: 'fa-clock', label: 'Duration', value: '2 Hours' },
+        { icon: 'fa-location-dot', label: 'Meeting', value: 'Cenang Beach' },
+        { icon: 'fa-users', label: 'Group', value: '1–2 per ski' }
+      ],
+      description: 'Feel the spray of the Andaman Sea on a guided jet ski ride along Langkawi\'s coastline. After a full safety briefing, follow our lead guide past beaches and small islands with plenty of time for photos and swimming stops — perfect for thrill-seekers who still want a structured, safe experience.',
+      itinerary: [
+        { time: '9:30 AM', title: 'Meet at Cenang Beach', desc: 'Check-in, sign waiver, and life jacket fitting.' },
+        { time: '10:00 AM', title: 'Safety & Controls Briefing', desc: 'How to start, steer, throttle, and emergency signals.' },
+        { time: '10:15 AM', title: 'Guided Coastal Ride', desc: 'Follow-the-leader route along Pantai Cenang & nearby bays.' },
+        { time: '11:00 AM', title: 'Photo & Swim Stop', desc: 'Short break in calm water — photos and cool-off swim.' },
+        { time: '11:30 AM', title: 'Return Run', desc: 'Scenic ride back toward the launch point.' },
+        { time: '11:45 AM', title: 'End at Beach Base', desc: 'Return gear, fresh water, and quick debrief.' }
+      ],
+      included: ['Jet ski rental (shared or single rider options)', 'Life jacket & safety briefing', 'Lead guide on separate ski', 'Fuel', 'Bottled water'],
+      notIncluded: ['Hotel transfer (+RM 25)', 'Waterproof phone case rental', 'Photos / video package', 'Personal travel insurance', 'Tips for guide'],
+      bring: ['Swimwear & quick-dry clothing', 'Towel', 'Sunscreen (water-resistant)', 'Strapped sandals or aqua shoes', 'Valid ID (age & licence rules apply)', 'Change of clothes']
     }
   };
 
